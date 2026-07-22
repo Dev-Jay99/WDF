@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Student Hub Portal</title>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="header-container">
+
+            <div class="brand">
+                <a href="index.html" class="logo-link">
+                    <img src="../images/logo.png" alt="StudentHub Logo" aria-hidden="true">
+                    <span>StudentHub</span>
+                </a>
+            </div>
+
+            <nav class="primary-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li class="active-item"><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="auth-buttons">
+                <a href="login.html" class="login-btn">Login</a>
+                <a href="register.html" class="register-btn">Register</a>
+            </div>
+
+        </div>
+    </header>
+
+    <main class="contact-main">
+        <div class="page-wrapper">
+
+            <h1 class="page-title">Contact Us</h1>
+
+            <div class="contact-content-grid">
+
+                <section class="message-card">
+                    <h2>Send us a message</h2>
+                    <form action="/submit-contact" method="POST" class="contact-form">
+
+                        <div class="input-block">
+                            <label for="userName">Your Name</label>
+                            <input type="text" id="userName" name="userName" placeholder="jay" required>
+                        </div>
+
+                        <div class="input-block">
+                            <label for="userEmail">University Email</label>
+                            <input type="email" id="userEmail" name="userEmail"
+                                placeholder="jay@.charusat.edu.in" required>
+                        </div>
+
+                        <div class="input-block">
+                            <label for="userMessage">Your Message</label>
+                            <textarea id="userMessage" name="userMessage" rows="5"
+                                placeholder="Hello, I have a question about..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-action-button">Submit</button>
+
+                    </form>
+                </section>
+
+               
+                <section class="info-section">
+                    <h2>Contact Information</h2>
+                    <ul class="info-list">
+
+                        <li class="info-item">
+                            <div class="icon-box">
+                                <img src="icons/location-pin.svg" alt="Address" aria-hidden="true">
+                            </div>
+                            <div class="info-details">
+                                <strong>Address</strong>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing.,<br>Lorem, ipsum.</p>
+                            </div>
+                        </li>
+
+                        <li class="info-item">
+                            <div class="icon-box">
+                                <img src="" alt="Phone" >
+                            </div>
+                            <div class="info-details">
+                                <strong>Phone</strong>
+                                <p>555-0100</p>
+                            </div>
+                        </li>
+
+                        <li class="info-item">
+                            <div class="icon-box">
+                                <img src="icons/mail.svg" alt="Email" aria-hidden="true">
+                            </div>
+                            <div class="info-details">
+                                <strong>Email</strong>
+                                <p>support@studenthub.edu</p>
+                            </div>
+                        </li>
+
+                    </ul>
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <nav class="footer-nav">
+                <a href="about.html">About</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Help Center</a>
+            </nav>
+            <div class="copyright-text">
+                <p>&copy; 2024 StudentHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
