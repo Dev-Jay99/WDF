@@ -1,0 +1,137 @@
+/* ==========================================================================
+   Academic Results Page Styles (result.css)
+   ========================================================================== */
+
+.page-header {
+    padding: 30px 0 20px 0;
+    border-bottom: 1px solid var(--bs-border-color);
+    margin-bottom: 30px;
+}
+
+.page-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--bs-dark);
+    margin-bottom: 4px;
+}
+
+.page-subtitle {
+    color: var(--bs-secondary);
+}
+
+/* Summary Cards Grid */
+.summary-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    margin-bottom: 35px;
+}
+
+.summary-card {
+    background-color: var(--bs-white);
+    border: 1px solid var(--bs-border-color);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+}
+
+.summary-card h6 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: var(--bs-secondary);
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.metric-value {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--bs-primary);
+    margin-bottom: 4px;
+    line-height: 1.2;
+}
+
+.summary-card small {
+    color: var(--bs-secondary);
+    font-size: 0.85rem;
+}
+
+/* Report Table Container */
+.report-card {
+    background-color: var(--bs-white);
+    border: 1px solid var(--bs-border-color);
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+}
+
+.report-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--bs-border-color);
+}
+
+.report-header h4 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--bs-dark);
+}
+
+.report-controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.select-control {
+    padding: 8px 12px;
+    border: 1px solid var(--bs-border-color);
+    border-radius: 6px;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+/* Table Styling */
+.table-responsive {
+    overflow-x: auto;
+}
+
+.grades-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.grades-table th, .grades-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--bs-border-color);
+}
+
+.grades-table th {
+    background-color: var(--bs-light);
+    color: var(--bs-secondary);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 700;
+}
+
+.grades-table td {
+    font-size: 0.95rem;
+    color: var(--bs-dark);
+}
+
+.grade-tag {
+    background-color: rgba(var(--bs-success-rgb), 0.15);
+    color: var(--bs-success);
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+}

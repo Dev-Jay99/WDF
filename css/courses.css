@@ -1,0 +1,93 @@
+/* ==========================================================================
+   Courses Page Styles (courses.css)
+   ========================================================================== */
+
+.page-header {
+    padding: 30px 0 20px 0;
+    border-bottom: 1px solid var(--bs-border-color);
+    margin-bottom: 30px;
+}
+
+.page-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--bs-dark);
+    margin-bottom: 4px;
+}
+
+.page-subtitle {
+    color: var(--bs-secondary);
+}
+
+/* Course Grid */
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.course-card {
+    background-color: var(--bs-white);
+    border: 1px solid var(--bs-border-color);
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.course-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.course-badge {
+    background-color: rgba(var(--bs-primary-rgb), 0.1);
+    color: var(--bs-primary);
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 6px;
+}
+
+.course-credits {
+    font-size: 0.85rem;
+    color: var(--bs-secondary);
+}
+
+.course-card h4 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--bs-dark);
+    margin-bottom: 10px;
+}
+
+.course-card p {
+    font-size: 0.9rem;
+    color: var(--bs-secondary);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.course-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 16px;
+    border-top: 1px solid var(--bs-border-color);
+}
+
+.faculty-name {
+    font-size: 0.85rem;
+    color: var(--bs-secondary);
+}

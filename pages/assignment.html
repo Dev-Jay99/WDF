@@ -4,242 +4,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Assignments | StudentHub</title>
+    <title>My Assignments - Student Hub Portal</title>
+    <link rel="icon" href="./images/logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/assignment.css">
 </head>
 
 <body>
 
-    <header class="site-header">
-        <div class="header-container">
-
-            <div class="brand">
-                <a href="index.html" class="logo-link">
-                    <img src="icons/logo.svg" alt="StudentHub Logo" aria-hidden="true">
-                    <span>StudentHub</span>
+    <!-- ===== HEADER / NAVBAR ===== -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="../index.html" class="logo">
+                    <span></span> StudentHub
                 </a>
-            </div>
-
-            <nav class="primary-nav">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="attendance.html">Attendance</a></li>
-                    <li class="active-item"><a href="dashboard.html">Dashboard</a></li>
-                </ul>
+                <div class="nav-actions">
+                    <ul class="nav-links">
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="attendance.html">Attendance</a></li>
+                        <li><a href="assignment.html" class="active">Assignment</a></li>
+                        <li><a href="result.html">Result</a></li>
+                        <li><a href="profile.html">Profile</a></li>
+                        <li><a href="#" class="btn-logout" id="navLogoutBtn">Logout</a></li>
+                    </ul>
+            
+                </div>
             </nav>
-
-            <div class="header-actions">
-                <a href="login.html" class="btn btn-outline">Login</a>
-                <a href="register.html" class="btn btn-primary">Register</a>
-                <a href="contact.html" class="nav-link">Contact</a>
-            </div>
-
         </div>
     </header>
 
-    <main class="assignments-main">
-        <div class="page-wrapper">
+    <main id="main-content">
+        <div class="container">
 
-            <h1 class="page-title">My Assignments</h1>
+            <!-- Page Header -->
+            <div class="page-header">
+                <h1 class="page-title">My Assignments</h1>
+                <p class="page-subtitle">View upcoming deadlines, submit coursework, and check instructor feedback.</p>
+            </div>
 
+            <!-- Assignments Grid -->
             <div class="assignments-grid">
 
-                <!-- Assignment Card 1 -->
-                <article class="assignment-card">
-                    <header class="card-top-row">
-                        <span class="badge badge-warning">DUE SOON</span>
-                        <span class="course-code">MAT 201</span>
-                    </header>
-
-                    <h2 class="assignment-title">Problem Set 1: Sets and Functions</h2>
-
-                    <div class="assignment-meta">
-                        <div class="meta-item">
-                            <img src="icons/book.svg" alt="Course" aria-hidden="true">
-                            <div class="meta-text">
-                                <span class="line-1">Real Analysis</span>
-                                <span class="line-2">MAT 201</span>
-                            </div>
+                <!-- Card 1 -->
+                <div class="assignment-card">
+                    <div>
+                        <div class="card-top-bar">
+                            <span class="badge badge-due-soon">DUE SOON</span>
+                            <span class="course-code">DM 201</span>
                         </div>
-                        <div class="meta-item">
-                            <img src="icons/calendar.svg" alt="Date" aria-hidden="true">
-                            <div class="meta-text">
-                                <span class="line-1">Due: Oct 25,</span>
-                                <span class="line-2">2023, 11:59 PM</span>
-                            </div>
+                        <h4>Problem Set 1: Sets and Functions</h4>
+                        <div class="assignment-details">
+                            <div class="assignment-detail-line"> DM</div>
+                            <div class="assignment-detail-line"> Due: Aug 6, 2026, 11:59 PM</div>
                         </div>
                     </div>
-
-                    <div class="card-actions">
-                        <button class="btn btn-outline">View Assignment</button>
-                        <button class="btn btn-primary">Submit Assignment</button>
+                    <div class="assignment-actions">
+                        <button class="btn btn-outline">View Details</button>
+                        <button class="btn btn-primary">Submit</button>
                     </div>
-                </article>
+                </div>
+                
 
-                <!-- Assignment Card 2 -->
-                <article class="assignment-card">
-                    <header class="card-top-row">
-                        <span class="badge badge-success">COMPLETED</span>
-                        <span class="course-code">PHY 102</span>
-                    </header>
-
-                    <h2 class="assignment-title">Lab Report 2: Kinematics</h2>
-
-                    <div class="assignment-meta">
-                        <div class="meta-item">
-                            <img src="icons/book.svg" alt="Course" aria-hidden="true">
-                            <div class="meta-text">
-                                <span class="line-1">Mechanics</span>
-                                <span class="line-2">PHY 102</span>
-                            </div>
+                <!-- Card 2 -->
+                <div class="assignment-card">
+                    <div>
+                        <div class="card-top-bar">
+                            <span class="badge badge-completed">COMPLETED</span>
+                            <span class="course-code">FCN 102</span>
                         </div>
-                        <div class="meta-item">
-                            <img src="icons/calendar.svg" alt="Date" aria-hidden="true">
-                            <div class="meta-text">
-                                <span class="line-1">Submitted:</span>
-                                <span class="line-2">Oct 12, 2023</span>
-                            </div>
+                        <h4>FCN Assignment 2</h4>
+                        <div class="assignment-details">
+                            <div class="assignment-detail-line"> FCN</div>
+                            <div class="assignment-detail-line"> Submitted: Aug 8, 2026</div>
                         </div>
                     </div>
-
-                    <div class="card-actions">
-                        <button class="btn btn-outline">View Assignment</button>
-                        <button class="btn btn-primary">Check Grade</button>
+                    <div class="assignment-actions">
+                        <button class="btn btn-outline">View Details</button>
+                        <button class="btn btn-outline">Check Grade</button>
                     </div>
-                </article>
+                </div>
 
-                <!-- Assignment Card 3 -->
-                <article class="assignment-card">
-                    <header class="card-top-row">
-                        <span class="badge badge-success">COMPLETED</span>
-                        <span class="course-code">PHY 102</span>
-                    </header>
-
-                    <h2 class="assignment-title">Intro to Engineering Essay 1</h2>
-
-                    <div class="assignment-meta">
-                        <div class="meta-item">
-                            <img src="icons/book.svg" alt="Course" aria-hidden="true">
-                            <div class="meta-text">
-                                <span class="line-1">Mechanics</span>
-                                <span class="line-2">PHY 102</span>
-                            </div>
+                <!-- Card 3 -->
+                <div class="assignment-card">
+                    <div>
+                        <div class="card-top-bar">
+                            <span class="badge badge-completed">COMPLETED</span>
+                            <span class="course-code">OOP 101</span>
                         </div>
-                        <div class="meta-item">
-                            <img src="icons/calendar.svg" alt="Date" aria-hidden="true">
-                            <div class="meta-text">
-                                <span class="line-1">Submitted:</span>
-                                <span class="line-2">Oct 12, 2023</span>
-                            </div>
+                        <h4>Intro to OOP</h4>
+                        <div class="assignment-details">
+                            <div class="assignment-detail-line"> OOP</div>
+                            <div class="assignment-detail-line"> Submitted: Aug 18, 2026</div>
                         </div>
                     </div>
-
-                    <div class="card-actions">
-                        <button class="btn btn-outline">View Assignment</button>
-                        <button class="btn btn-primary">View Feedback</button>
+                    <div class="assignment-actions">
+                        <button class="btn btn-outline">View Details</button>
+                        <button class="btn btn-outline">Feedback</button>
                     </div>
-                </article>
+                </div>
 
-                <!-- Assignment Card 4 -->
-                <article class="assignment-card">
-                    <header class="card-top-row">
-                        <span class="badge badge-success">COMPLETED</span>
-                        <span class="course-code">CSE 101</span>
-                    </header>
-
-                    <h2 class="assignment-title">Final Project Proposal</h2>
-
-                    <div class="assignment-meta">
-                        <div class="meta-item">
-                            <img src="icons/book.svg" alt="Course" aria-hidden="true">
-                            <div class="meta-text">
-                                <span class="line-1">Final Project</span>
-                                <span class="line-2">MAT 201</span>
-                            </div>
+                <!-- Card 4 -->
+                <div class="assignment-card">
+                    <div>
+                        <div class="card-top-bar">
+                            <span class="badge badge-completed">COMPLETED</span>
+                            <span class="course-code">DM 201</span>
                         </div>
-                        <div class="meta-item">
-                            <img src="icons/calendar.svg" alt="Date" aria-hidden="true">
-                            <div class="meta-text">
-                                <span class="line-1">Submitted:</span>
-                                <span class="line-2">Oct 12, 2023</span>
-                            </div>
+                        <h4>DM Project Proposal</h4>
+                        <div class="assignment-details">
+                            <div class="assignment-detail-line"> DM</div>
+                            <div class="assignment-detail-line"> Submitted: Aug 14, 2026</div>
                         </div>
                     </div>
-
-                    <div class="card-actions">
-                        <button class="btn btn-outline">View Assignment</button>
-                        <button class="btn btn-primary">Mark as Planned</button>
+                    <div class="assignment-actions">
+                        <button class="btn btn-outline">View Details</button>
+                        <button class="btn btn-outline">Grade: 95/100</button>
                     </div>
-                </article>
+                </div>
 
-                <!-- Assignment Card 5 -->
-                <article class="assignment-card">
-                    <header class="card-top-row">
-                        <span class="badge badge-warning">DUE SOON</span>
-                        <span class="course-code">MAT 201</span>
-                    </header>
-
-                    <h2 class="assignment-title">Real Analysis Quiz 2</h2>
-
-                    <div class="assignment-meta">
-                        <div class="meta-item">
-                            <img src="icons/book.svg" alt="Course" aria-hidden="true">
-                            <div class="meta-text">
-                                <span class="line-1">PHY 102</span>
-                                <span class="line-2">MAT 201</span>
-                            </div>
+                <!-- Card 5 -->
+                <div class="assignment-card">
+                    <div>
+                        <div class="card-top-bar">
+                            <span class="badge badge-due-soon">DUE SOON</span>
+                            <span class="course-code">FCN 102</span>
                         </div>
-                        <div class="meta-item">
-                            <img src="icons/calendar.svg" alt="Date" aria-hidden="true">
-                            <div class="meta-text">
-                                <span class="line-1">Due: Oct 30,</span>
-                                <span class="line-2">2023, 5:00 PM</span>
-                            </div>
+                        <h4>FCN Quiz 2</h4>
+                        <div class="assignment-details">
+                            <div class="assignment-detail-line"> FCN</div>
+                            <div class="assignment-detail-line"> Due: Aug 10, 2026, 5:00 PM</div>
                         </div>
                     </div>
-
-                    <div class="card-actions">
-                        <button class="btn btn-outline">View Assignment</button>
-                        <button class="btn btn-primary">Mark as Planned</button>
+                    <div class="assignment-actions">
+                        <button class="btn btn-outline">View Details</button>
+                        <button class="btn btn-primary">Take Quiz</button>
                     </div>
-                </article>
+                </div>
 
-                <!-- Assignment Card 6 -->
-                <article class="assignment-card">
-                    <header class="card-top-row">
-                        <span class="badge badge-success">COMPLETED</span>
-                        <span class="course-code">PHY 102</span>
-                    </header>
-
-                    <h2 class="assignment-title">Mechanics Essay 2</h2>
-
-                    <div class="assignment-meta">
-                        <div class="meta-item">
-                            <img src="icons/book.svg" alt="Course" aria-hidden="true">
-                            <div class="meta-text">
-                                <span class="line-1">Mechanics</span>
-                                <span class="line-2">PHY 102</span>
-                            </div>
+                <!-- Card 6 -->
+                <div class="assignment-card">
+                    <div>
+                        <div class="card-top-bar">
+                            <span class="badge badge-completed">COMPLETED</span>
+                            <span class="course-code">OOP 101</span>
                         </div>
-                        <div class="meta-item">
-                            <img src="icons/calendar.svg" alt="Date" aria-hidden="true">
-                            <div class="meta-text">
-                                <span class="line-1">Due: Oct 30,</span>
-                                <span class="line-2">2023, 5:00 PM</span>
-                            </div>
+                        <h4>OOP Essay 2</h4>
+                        <div class="assignment-details">
+                            <div class="assignment-detail-line"> OOP</div>
+                            <div class="assignment-detail-line"> Submitted: Aug 8, 2026</div>
                         </div>
                     </div>
-
-                    <div class="card-actions">
-                        <button class="btn btn-outline">View Assignment</button>
-                        <button class="btn btn-primary">Mark as Planned</button>
+                    <div class="assignment-actions">
+                        <button class="btn btn-outline">View Details</button>
+                        <button class="btn btn-outline">Feedback</button>
                     </div>
-                </article>
+                </div>
 
             </div>
+
         </div>
     </main>
 
+        <script src="../js/script.js"></script>
 </body>
 
 </html>

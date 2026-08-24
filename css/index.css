@@ -1,0 +1,94 @@
+/* ==========================================================================
+   Home Page Styles (index.css)
+   ========================================================================== */
+
+/* Hero Section */
+.hero-section {
+    padding: 60px 0;
+    text-align: center;
+    background-color: var(--bs-white);
+    border-bottom: 1px solid var(--bs-border-color);
+}
+
+.hero-content {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.tagline {
+    color: var(--bs-primary);
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.hero-title {
+    font-size: 2.75rem;
+    font-weight: 800;
+    color: var(--bs-dark);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-description {
+    font-size: 1.15rem;
+    color: var(--bs-secondary);
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* Features Section */
+.features-section {
+    padding: 60px 0;
+}
+
+.section-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: var(--bs-dark);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.feature-card {
+    background-color: var(--bs-white);
+    border: 1px solid var(--bs-border-color);
+    border-radius: 12px;
+    padding: 25px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.feature-icon {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.feature-card h5 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--bs-dark);
+}
+
+.feature-card p {
+    color: var(--bs-secondary);
+    font-size: 0.95rem;
+}

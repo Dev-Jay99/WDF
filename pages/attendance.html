@@ -4,152 +4,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Attendance Information | Student Hub Portal</title>
+    <title>Attendance Information - Student Hub Portal</title>
+    <link rel="icon" href="./images/logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/attendance.css">
 </head>
 
 <body>
 
-    <header class="site-header">
-        <div class="header-container">
-
-            <div class="brand">
-                <a href="index.html" class="logo-link">
-                    <img src="icons/logo.svg" alt="StudentHub Logo" aria-hidden="true">
-                    <span>Student Hub Portal</span>
+    <!-- ===== HEADER / NAVBAR ===== -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="../index.html" class="logo">
+                    StudentHub
                 </a>
-            </div>
-
-            <nav class="primary-nav">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li class="active-item"><a href="attendance.html">Attendance</a></li>
-                    <li><a href="dashboard.html">Dashboard</a></li>
-                </ul>
+                <div class="nav-actions">
+                    <ul class="nav-links">
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="attendance.html" class="active">Attendance</a></li>
+                        <li><a href="assignment.html">Assignment</a></li>
+                        <li><a href="result.html">Result</a></li>
+                        <li><a href="profile.html">Profile</a></li>
+                        <li><a href="#" class="btn-logout" id="navLogoutBtn">Logout</a></li>
+                    </ul>
+                    
+                </div>
             </nav>
-
-            <div class="header-actions">
-                <a href="login.html" class="btn btn-outline">Login</a>
-                <a href="register.html" class="btn btn-primary">Register</a>
-                <a href="contact.html" class="nav-link">Contact</a>
-            </div>
-
         </div>
     </header>
 
-    <main class="attendance-main">
-        <div class="page-wrapper">
+    <main id="main-content">
+        <div class="container">
 
-            <h1 class="page-title">Attendance Information</h1>
+            <!-- Page Title -->
+            <div class="page-header-row">
+                <div>
+                    <h1 class="page-title">Attendance Information</h1>
+                    <p class="page-subtitle">Track your overall subject attendance and minimum eligibility (80%
+                        required).</p>
+                </div>
+                <div>
+                    <span class="overall-badge">Overall: 84.2%</span>
+                </div>
+            </div>
 
-            <div class="attendance-cards-container">
+            <!-- Subject Cards Grid -->
+            <div class="attendance-grid">
 
-                <!--  Card -->
-                <article class="attendance-card">
-                    <div class="subject-info">
-                        <div class="subject-icon-box">
-                            <img src="icons/math-symbols.svg" alt="Math" aria-hidden="true">
+                <!-- Subject 1: WDF -->
+                <div class="attendance-card">
+                    <div class="card-top-info">
+                        <div class="subject-details-box">
+                            <div>
+                                <h4>WDF (ITUE203)</h4>
+                                <small>Web Development Frameworks</small>
+                            </div>
                         </div>
-                        <div class="subject-text">
-                            <h2 class="subject-title">
-                                WDF
-                                <img src="icons/check-circle-green.svg" alt="Good Attendance" class="status-icon">
-                            </h2>
-                            <p class="subject-meta">Lectures Attended: 18/20</p>
-                        </div>
+                        <span class="status-tag tag-good">Good</span>
                     </div>
-
-                    <div class="card-divider" aria-hidden="true"></div>
-
-                    <div class="progress-info">
-                        <span class="progress-value text-blue">90%</span>
+                    <div>
+                        <div class="progress-meta">
+                            <span class="meta-count">Lectures Attended: 18/20</span>
+                            <span class="meta-percent">90%</span>
+                        </div>
                         <div class="progress-track">
-                            <div class="progress-fill bg-blue" style="width: 90%;" role="progressbar" aria-valuenow="90"
-                                aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <span class="progress-status text-green">90%</span>
-                    </div>
-                </article>
-
-                <!-- Physics Card -->
-                <article class="attendance-card">
-                    <div class="subject-info">
-                        <div class="subject-icon-box">
-                            <img src="icons/atom.svg" alt="Physics" aria-hidden="true">
-                        </div>
-                        <div class="subject-text">
-                            <h2 class="subject-title">FCN</h2>
-                            <p class="subject-meta">Lectures Attended: 17/20</p>
+                            <div class="progress-bar bg-blue" style="width: 90%;"></div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="card-divider" aria-hidden="true"></div>
-
-                    <div class="progress-info">
-                        <span class="progress-value text-blue">85%</span>
+                <!-- Subject 2: FCN -->
+                <div class="attendance-card">
+                    <div class="card-top-info">
+                        <div class="subject-details-box">
+                            <div>
+                                <h4>FCN (CE202)</h4>
+                                <small>Fundamentals of Computer Networks</small>
+                            </div>
+                        </div>
+                        <span class="status-tag tag-good">Good</span>
+                    </div>
+                    <div>
+                        <div class="progress-meta">
+                            <span class="meta-count">Lectures Attended: 17/20</span>
+                            <span class="meta-percent">85%</span>
+                        </div>
                         <div class="progress-track">
-                            <div class="progress-fill bg-blue" style="width: 85%;" role="progressbar" aria-valuenow="85"
-                                aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <span class="progress-status text-blue">85%</span>
-                    </div>
-                </article>
-
-                <!--  Card -->
-                <article class="attendance-card">
-                    <div class="subject-info">
-                        <div class="subject-icon-box">
-                            <img src="icons/beaker.svg" alt="Chemistry" aria-hidden="true">
-                        </div>
-                        <div class="subject-text">
-                            <h2 class="subject-title">DM</h2>
-                            <p class="subject-meta">Lectures Attended: 14/20</p>
+                            <div class="progress-bar bg-cyan" style="width: 85%;"></div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="card-divider" aria-hidden="true"></div>
-
-                    <div class="progress-info">
-                        <span class="progress-value text-blue">70%</span>
+                <!-- Subject 3: DM -->
+                <div class="attendance-card">
+                    <div class="card-top-info">
+                        <div class="subject-details-box">
+                            <div>
+                                <h4>DM (MA203)</h4>
+                                <small>Discrete Mathematics</small>
+                            </div>
+                        </div>
+                        <span class="status-tag tag-low">Low</span>
+                    </div>
+                    <div>
+                        <div class="progress-meta">
+                            <span class="meta-count">Lectures Attended: 14/20</span>
+                            <span class="meta-percent">70%</span>
+                        </div>
                         <div class="progress-track">
-                            <div class="progress-fill bg-blue" style="width: 70%;" role="progressbar" aria-valuenow="70"
-                                aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <span class="progress-status text-red">70%</span>
-                    </div>
-                </article>
-
-                <!--  Card -->
-                <article class="attendance-card">
-                    <div class="subject-info">
-                        <div class="subject-icon-box">
-                            <img src="icons/leaf.svg" alt="Biology" aria-hidden="true">
-                        </div>
-                        <div class="subject-text">
-                            <h2 class="subject-title">
-                                DSA
-                                <img src="icons/check-circle-green.svg" alt="Good Attendance" class="status-icon">
-                            </h2>
-                            <p class="subject-meta">Lectures Attended: 23/25</p>
+                            <div class="progress-bar bg-orange" style="width: 70%;"></div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="card-divider" aria-hidden="true"></div>
-
-                    <div class="progress-info">
-                        <span class="progress-value text-blue">92%</span>
+                <!-- Subject 4: DSA -->
+                <div class="attendance-card">
+                    <div class="card-top-info">
+                        <div class="subject-details-box">
+                            <div>
+                                <h4>DSA (CE201)</h4>
+                                <small>Data Structures & Algorithms</small>
+                            </div>
+                        </div>
+                        <span class="status-tag tag-good">Good</span>
+                    </div>
+                    <div>
+                        <div class="progress-meta">
+                            <span class="meta-count">Lectures Attended: 23/25</span>
+                            <span class="meta-percent">92%</span>
+                        </div>
                         <div class="progress-track">
-                            <div class="progress-fill bg-blue" style="width: 92%;" role="progressbar" aria-valuenow="92"
-                                aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar bg-green" style="width: 92%;"></div>
                         </div>
-                        <span class="progress-status text-green">92%</span>
                     </div>
-                </article>
-
+                </div>
             </div>
         </div>
     </main>
 
+    <script src="../js/script.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,109 @@
+/* ==========================================================================
+   Assignments Page Styles (assignment.css)
+   ========================================================================== */
+
+.page-header {
+    padding: 30px 0 20px 0;
+    border-bottom: 1px solid var(--bs-border-color);
+    margin-bottom: 30px;
+}
+
+.page-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--bs-dark);
+    margin-bottom: 4px;
+}
+
+.page-subtitle {
+    color: var(--bs-secondary);
+}
+
+/* Assignments Grid */
+.assignments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.assignment-card {
+    background-color: var(--bs-white);
+    border: 1px solid var(--bs-border-color);
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+    transition: transform 0.2s ease;
+}
+
+.assignment-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.card-top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 6px;
+    text-transform: uppercase;
+}
+
+.badge-due-soon {
+    background-color: rgba(var(--bs-warning-rgb), 0.15);
+    color: var(--bs-warning);
+}
+
+.badge-completed {
+    background-color: rgba(var(--bs-success-rgb), 0.15);
+    color: var(--bs-success);
+}
+
+.course-code {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--bs-secondary);
+}
+
+.assignment-card h4 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--bs-dark);
+    margin-bottom: 14px;
+}
+
+.assignment-details {
+    font-size: 0.85rem;
+    color: var(--bs-secondary);
+    margin-bottom: 20px;
+}
+
+.assignment-detail-line {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 6px;
+}
+
+.assignment-actions {
+    display: flex;
+    gap: 10px;
+    padding-top: 16px;
+    border-top: 1px solid var(--bs-border-color);
+}
+
+.assignment-actions .btn {
+    flex: 1;
+    font-size: 0.85rem;
+    padding: 8px 12px;
+}

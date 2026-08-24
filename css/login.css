@@ -1,0 +1,115 @@
+/* ==========================================================================
+   Login Page Styles (login.css)
+   ========================================================================== */
+
+.auth-container {
+    padding: 60px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.auth-card {
+    background-color: var(--bs-white);
+    border: 1px solid var(--bs-border-color);
+    border-radius: 16px;
+    padding: 40px;
+    width: 100%;
+    max-width: 440px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.auth-icon {
+    font-size: 2rem;
+    background-color: rgba(var(--bs-primary-rgb), 0.1);
+    width: 54px;
+    height: 54px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px auto;
+}
+
+.auth-header h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--bs-dark);
+    margin-bottom: 6px;
+}
+
+.auth-header p {
+    font-size: 0.9rem;
+    color: var(--bs-secondary);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--bs-dark);
+    margin-bottom: 8px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 0.95rem;
+    border: 1px solid var(--bs-border-color);
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.form-control:focus {
+    border-color: var(--bs-primary);
+    box-shadow: 0 0 0 3px rgba(var(--bs-primary-rgb), 0.25);
+}
+
+.form-actions-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    font-size: 0.85rem;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--bs-secondary);
+}
+
+.forgot-link {
+    color: var(--bs-primary);
+    font-weight: 600;
+}
+
+.btn-full {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+}
+
+.auth-footer {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--bs-border-color);
+    font-size: 0.9rem;
+    color: var(--bs-secondary);
+}
+
+.auth-footer a {
+    color: var(--bs-primary);
+    font-weight: 600;
+}

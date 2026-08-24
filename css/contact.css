@@ -1,0 +1,118 @@
+/* ==========================================================================
+   Contact Page Styles (contact.css)
+   ========================================================================== */
+
+.page-header {
+    padding: 30px 0 20px 0;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.page-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: var(--bs-dark);
+    margin-bottom: 8px;
+}
+
+.page-subtitle {
+    color: var(--bs-secondary);
+    font-size: 1.05rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Contact Layout Grid */
+.contact-layout {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.contact-card {
+    background-color: var(--bs-white);
+    border: 1px solid var(--bs-border-color);
+    border-radius: 16px;
+    padding: 35px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+}
+
+.contact-card h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--bs-dark);
+    margin-bottom: 24px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--bs-dark);
+    margin-bottom: 6px;
+}
+
+.form-control, textarea {
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 0.95rem;
+    border: 1px solid var(--bs-border-color);
+    border-radius: 8px;
+    outline: none;
+    font-family: inherit;
+}
+
+.form-control:focus, textarea:focus {
+    border-color: var(--bs-primary);
+    box-shadow: 0 0 0 3px rgba(var(--bs-primary-rgb), 0.25);
+}
+
+/* Contact Info List */
+.info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.info-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background-color: rgba(var(--bs-primary-rgb), 0.1);
+    color: var(--bs-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.info-details h6 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--bs-dark);
+    margin-bottom: 4px;
+}
+
+.info-details p {
+    font-size: 0.9rem;
+    color: var(--bs-secondary);
+    line-height: 1.5;
+}
+
+@media (max-width: 850px) {
+    .contact-layout {
+        grid-template-columns: 1fr;
+    }
+}

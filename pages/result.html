@@ -4,159 +4,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Results | StudentHub</title>
+    <title>Academic Results - Student Hub Portal</title>
+    <link rel="icon" href="./images/logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/result.css">
+
 </head>
 
 <body>
 
-    <header class="site-header">
-        <div class="header-container">
-
-            <div class="brand">
-                <a href="index.html" class="logo-link">
-                    <img src="icons/logo.svg" alt="StudentHub Logo" aria-hidden="true">
-                    <span>StudentHub</span>
+    <!-- ===== HEADER / NAVBAR ===== -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="../index.html" class="logo">
+                    StudentHub
                 </a>
-            </div>
+                <div class="nav-actions">
+                    <ul class="nav-links">
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="attendance.html">Attendance</a></li>
+                        <li><a href="assignment.html">Assignment</a></li>
+                        <li><a href="result.html" class="active">Result</a></li>
+                        <li><a href="profile.html">Profile</a></li>
+                        <li><a href="#" class="btn-logout" id="navLogoutBtn">Logout</a></li>
+                    </ul>
 
-            <nav class="primary-nav">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="register.html">Register</a></li>
-                </ul>
+                </div>
             </nav>
-
-            <div class="header-actions">
-                <a href="register.html" class="btn btn-primary">Register</a>
-                <a href="login.html" class="btn btn-outline">Login</a>
-            </div>
-
         </div>
     </header>
 
-    <main class="results-main">
-        <div class="page-wrapper">
+    <main id="main-content">
+        <div class="container">
 
-            <!-- Page Titles -->
-            <header class="page-header">
-                <h1 class="page-title">Results</h1>
-                <p class="subtitle">Your student subtitits data downg the overall academic progress.</p>
-                <p class="student-info">Overall academic progress (e.g. , Roll No: STU_2024_08_01)</p>
-            </header>
-
-            <!-- Summary Cards -->
-            <div class="summary-cards-container">
-
-                <article class="summary-card">
-                    <h2 class="card-title">Current Semester GPA (Semester 5)</h2>
-                    <div class="metric-value text-blue">3.70</div>
-                    <p class="card-description">The current Semester GPA is current academes you for you team.</p>
-                </article>
-
-                <article class="summary-card">
-                    <h2 class="card-title">Cumulative GPA (CGPA)</h2>
-                    <div class="metric-value text-blue">3.85</div>
-                    <p class="card-description">Total academic record. (Referencing earlier ansmer turnaround).</p>
-                </article>
-
-                <article class="summary-card">
-                    <h2 class="card-title">Total Credits Earned</h2>
-                    <div class="metric-value">96 / 120</div>
-                    <div class="progress-bar-container">
-                        <div class="progress-track">
-                            <div class="progress-fill" style="width: 80%;" role="progressbar" aria-valuenow="96"
-                                aria-valuemin="0" aria-valuemax="120"></div>
-                        </div>
-                    </div>
-                </article>
-
+            <!-- Page Title -->
+            <div class="page-header">
+                <h1 class="page-title">Academic Results & Transcripts</h1>
+                <p class="page-subtitle">Track semester performance, cumulative GPA, and download official marksheet
+                    reports.</p>
             </div>
 
-            <!-- Action Controls -->
-            <div class="results-actions-bar">
+            <!-- Summary Cards Grid -->
+            <div class="summary-cards-grid">
+                <div class="summary-card">
+                    <h6>Current Semester GPA</h6>
+                    <div class="metric-value">8.70</div>
+                    <small>Spring 2024 (Semester 5)</small>
+                </div>
 
-                <div class="semester-selector-group">
-                    <label for="semester-select" class="selector-label">View Semester Result</label>
-                    <div class="select-wrapper">
-                        <select id="semester-select" name="semester" class="custom-select">
-                            <option value="spring-2024" selected>Spring 2024 (Semester 5)</option>
+                <div class="summary-card">
+                    <h6>Cumulative GPA (CGPA)</h6>
+                    <div class="metric-value text-success">8.85</div>
+                    <small>Overall Academic Progress</small>
+                </div>
+
+                <div class="summary-card">
+                    <h6>Total Credits Earned</h6>
+                    <div class="metric-value text-dark">96 / 120</div>
+                    <small>80% Completed</small>
+                </div>
+            </div>
+
+            <!-- Report Card & Table -->
+            <div class="report-card">
+                <div class="report-header">
+                    <h4>Grade Report - Spring 2024 (Semester 5)</h4>
+                    <div class="report-controls">
+                        <select class="select-control">
+                            <option selected>Spring 2024 (Semester 5)</option>
+                            <option>Fall 2023 (Semester 4)</option>
+                            <option>Spring 2023 (Semester 3)</option>
                         </select>
+                        <button class="btn btn-primary"> Download PDF</button>
                     </div>
                 </div>
 
-                <button type="button" class="btn btn-primary download-btn">
-                    Download Semester Marksheet (PDF)
-                    <img src="icons/document-download.svg" alt="" aria-hidden="true" class="btn-icon">
-                </button>
-
-            </div>
-
-            <!-- Grade Report Table -->
-            <section class="grade-report-section">
-                <h2 class="section-title">Grade Report - Spring 2024 (Semester 5)</h2>
-
-                <div class="table-responsive-container">
+                <div class="table-responsive">
                     <table class="grades-table">
                         <thead>
                             <tr>
-                                <th scope="col">Subject Code</th>
-                                <th scope="col">Subject Name</th>
-                                <th scope="col">Credits</th>
-                                <th scope="col">Marks Obtained / Total</th>
-                                <th scope="col">Grade</th>
-                                <th scope="col">Grade Points</th>
+                                <th>Subject Code</th>
+                                <th>Subject Name</th>
+                                <th>Credits</th>
+                                <th>Marks Obtained</th>
+                                <th>Grade</th>
+                                <th>Grade Points</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>CS 301</td>
+                                <td><strong>CS 301</strong></td>
                                 <td>Database Systems</td>
                                 <td>4</td>
                                 <td>92 / 100</td>
-                                <td class="grade-letter text-blue">A</td>
-                                <td>10.0</td>
+                                <td><span class="grade-tag">A</span></td>
+                                <td><strong>10.0</strong></td>
                             </tr>
                             <tr>
-                                <td>CS 302</td>
+                                <td><strong>CS 302</strong></td>
                                 <td>Operating Systems</td>
                                 <td>4</td>
                                 <td>88 / 100</td>
-                                <td class="grade-letter text-blue">A-</td>
-                                <td>9.0</td>
+                                <td><span class="grade-tag">A-</span></td>
+                                <td><strong>9.0</strong></td>
                             </tr>
                             <tr>
-                                <td>ENG 201</td>
-                                <td>Technical Writing</td>
+                                <td><strong>DSA 201</strong></td>
+                                <td>Problem Solving</td>
                                 <td>3</td>
                                 <td>85 / 100</td>
-                                <td class="grade-letter text-blue">A-</td>
-                                <td>9.0</td>
+                                <td><span class="grade-tag">A-</span></td>
+                                <td><strong>9.0</strong></td>
                             </tr>
                             <tr>
-                                <td>MATH 201</td>
+                                <td><strong>MATH 201</strong></td>
                                 <td>Discrete Math</td>
                                 <td>4</td>
                                 <td>95 / 100</td>
-                                <td class="grade-letter text-blue">A+</td>
-                                <td>10.0</td>
+                                <td><span class="grade-tag">A+</span></td>
+                                <td><strong>10.0</strong></td>
                             </tr>
                             <tr>
-                                <td>PHY 101</td>
-                                <td>Applied Physics</td>
+                                <td><strong>FCN 101</strong></td>
+                                <td>FCN</td>
                                 <td>3</td>
                                 <td>78 / 100</td>
-                                <td class="grade-letter text-muted">B+</td>
-                                <td>7.0</td>
+                                <td><span class="grade-tag bg-light text-secondary">B+</span>
+                                </td>
+                                <td><strong>7.0</strong></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-            </section>
+
+            </div>
 
         </div>
     </main>
 
+    <script src="../js/script.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - Student Hub Portal</title>
+    <link rel="icon" href="./images/logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+
+<body>
+
+    <!-- ===== HEADER / NAVBAR ===== -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="../index.html" class="logo">
+                    StudentHub
+                </a>
+                <div class="nav-actions">
+                    <ul class="nav-links">
+                        <li><a href="dashboard.html" class="active">Dashboard</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="attendance.html">Attendance</a></li>
+                        <li><a href="assignment.html">Assignment</a></li>
+                        <li><a href="result.html">Result</a></li>
+                        <li><a href="profile.html">Profile</a></li>
+                        <li><a href="#" class="btn-logout" id="navLogoutBtn">Logout</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <div class="container">
+
+            <!-- Welcome Header -->
+            <div class="dashboard-header">
+                <div>
+                    <h1 class="dashboard-title">Student Dashboard</h1>
+                    <p class="dashboard-subtitle">Welcome back, <strong>Jay Bhensdadiya</strong> (B.Tech CE - 3rd Sem)
+                    </p>
+                </div>
+                <div>
+                    <a href="profile.html" class="btn btn-outline"> View Profile</a>
+                </div>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div>
+                        <div class="stat-label">CGPA</div>
+                        <div class="stat-value">8.85</div>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+
+                    <div>
+                        <div class="stat-label">Attendance</div>
+                        <div class="stat-value">86.8%</div>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div>
+                        <div class="stat-label">Due Assignments</div>
+                        <div class="stat-value">2</div>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div>
+                        <div class="stat-label">Enrolled Courses</div>
+                        <div class="stat-value">4</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Layout (Modules + Announcements) -->
+            <div class="dashboard-layout">
+
+                <!-- Left Column: Academic Modules -->
+                <div>
+                    <h4 class="modules-section-title"> Academic Modules</h4>
+                    <div class="modules-grid">
+
+                        <div class="module-card">
+                            <div>
+                                <div class="module-card-header">
+                                    <div>
+                                        <h5>Attendance Tracker</h5>
+                                        <small>4 Subjects Tracked</small>
+                                    </div>
+                                </div>
+                                <p>Check subject-wise lectures attended and eligibility status.</p>
+                            </div>
+                            <a href="attendance.html" class="btn btn-outline">View Attendance</a>
+                        </div>
+
+                        <div class="module-card">
+                            <div>
+                                <div class="module-card-header">
+                                    <div>
+                                        <h5>Assignments</h5>
+                                        <small>2 Pending Submissions</small>
+                                    </div>
+                                </div>
+                                <p>Submit lab reports, problem sets, and check grades.</p>
+                            </div>
+                            <a href="assignment.html" class="btn btn-outline">View Assignments</a>
+                        </div>
+
+                        <div class="module-card">
+                            <div>
+                                <div class="module-card-header">
+                                    <div>
+                                        <h5>Courses</h5>
+                                        <small>Semester 3 Curriculum</small>
+                                    </div>
+                                </div>
+                                <p>Browse course outlines, credits, and faculty details.</p>
+                            </div>
+                            <a href="courses.html" class="btn btn-outline">View Courses</a>
+                        </div>
+
+                        <div class="module-card">
+                            <div>
+                                <div class="module-card-header">
+                                    <div>
+                                        <h5>Results & Transcripts</h5>
+                                        <small>Spring 2024 Published</small>
+                                    </div>
+                                </div>
+                                <p>Access semester grade sheets and transcript downloads.</p>
+                            </div>
+                            <a href="result.html" class="btn btn-outline">View Results</a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Right Column: Recent Announcements -->
+                <div>
+                    <h4 class="modules-section-title"> Announcements</h4>
+                    <div class="announcements-card">
+                        <div class="announcement-item">
+                            <div class="announcement-meta">
+                                <span class="badge-tag">WDF</span>
+                                <small>Today</small>
+                            </div>
+                            <h6>Practical 3 Submission Open</h6>
+                            <p>Submit CSS Grid and Flexbox responsive layouts before Oct 25.</p>
+                        </div>
+                        <div class="announcement-item">
+                            <div class="announcement-meta">
+                                <span class="badge-tag">Exam Cell</span>
+                                <small>Yesterday</small>
+                            </div>
+                            <h6>Mid-Sem Exam Timetable</h6>
+                            <p>The mid-semester examination schedule is now available.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+
+</body>
+
+</html>

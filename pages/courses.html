@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses - Student Hub Portal</title>
+    <link rel="icon" href="./images/logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/courses.css">
+</head>
+
+<body>
+
+    <!--  HEADER / NAVBAR  -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="../index.html" class="logo">
+                    StudentHub
+                </a>
+                <div class="nav-actions">
+                    <ul class="nav-links">
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="courses.html" class="active">Courses</a></li>
+                        <li><a href="attendance.html">Attendance</a></li>
+                        <li><a href="assignment.html">Assignment</a></li>
+                        <li><a href="result.html">Result</a></li>
+                        <li><a href="profile.html">Profile</a></li>
+                        <li><a href="#" class="btn-logout" id="navLogoutBtn">Logout</a></li>
+                    </ul>
+
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <div class="container">
+
+            <!-- Page Title -->
+            <div class="page-header">
+                <h1 class="page-title">Enrolled Courses</h1>
+                <p class="page-subtitle">B.Tech Computer Engineering - Semester 3 Curriculum</p>
+            </div>
+
+            <!-- Course Grid -->
+            <div class="courses-grid">
+
+                <!-- Course 1 -->
+                <div class="course-card">
+                    <div>
+                        <div class="course-card-top">
+                            <span class="course-badge">ITUE203</span>
+                            <span class="course-credits"> 4 Credits</span>
+                        </div>
+                        <h4>Web Development Frameworks</h4>
+                        <p>Learn semantic HTML5, CSS Grid, Flexbox, Bootstrap, JavaScript DOM manipulation, and
+                            PHP/MySQL backend integration.</p>
+                    </div>
+                    <div class="course-card-footer">
+                        <small class="faculty-name"> Faculty: Dept of CE</small>
+                        <button class="btn btn-outline">Syllabus</button>
+                    </div>
+                </div>
+
+                <!-- Course 2 -->
+                <div class="course-card">
+                    <div>
+                        <div class="course-card-top">
+                            <span class="course-badge">CE202</span>
+                            <span class="course-credits"> 4 Credits</span>
+                        </div>
+                        <h4>Fundamentals of Computer Networks</h4>
+                        <p>Cover OSI layer protocols, TCP/IP architecture, IP addressing, routing algorithms, and
+                            network security basics.</p>
+                    </div>
+                    <div class="course-card-footer">
+                        <small class="faculty-name"> Faculty: Dept of CE</small>
+                        <button class="btn btn-outline">Syllabus</button>
+                    </div>
+                </div>
+
+                <!-- Course 3 -->
+                <div class="course-card">
+                    <div>
+                        <div class="course-card-top">
+                            <span class="course-badge">MA203</span>
+                            <span class="course-credits"> 4 Credits</span>
+                        </div>
+                        <h4>Discrete Mathematics</h4>
+                        <p>Explore set theory, mathematical logic, relations, graph theory, algebraic structures, and
+                            combinatorics.</p>
+                    </div>
+                    <div class="course-card-footer">
+                        <small class="faculty-name"> Faculty: Dept of Math</small>
+                        <button class="btn btn-outline">Syllabus</button>
+                    </div>
+                </div>
+
+                <!-- Course 4 -->
+                <div class="course-card">
+                    <div>
+                        <div class="course-card-top">
+                            <span class="course-badge">CE201</span>
+                            <span class="course-credits"> 4 Credits</span>
+                        </div>
+                        <h4>Data Structures & Algorithms</h4>
+                        <p>Master arrays, linked lists, stacks, queues, trees, graphs, sorting, searching, and time
+                            complexity analysis.</p>
+                    </div>
+                    <div class="course-card-footer">
+                        <small class="faculty-name"> Faculty: Dept of CE</small>
+                        <button class="btn btn-outline">Syllabus</button>
+                    </div>
+                </div>
+
+                <!-- Course 5 -->
+                <div class="course-card">
+                    <div>
+                        <div class="course-card-top">
+                            <span class="course-badge">HS201</span>
+                            <span class="course-credits"> 2 Credits</span>
+                        </div>
+                        <h4>Technical Communication</h4>
+                        <p>Develop professional writing, presentation skills, technical reporting, and interpersonal
+                            workplace skills.</p>
+                    </div>
+                    <div class="course-card-footer">
+                        <small class="faculty-name"> Faculty: Dept of Humanities</small>
+                        <button class="btn btn-outline">Syllabus</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

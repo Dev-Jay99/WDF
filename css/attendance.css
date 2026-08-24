@@ -1,0 +1,124 @@
+/* ==========================================================================
+   Attendance Page Styles (attendance.css)
+   ========================================================================== */
+
+.page-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 30px 0 20px 0;
+    border-bottom: 1px solid var(--bs-border-color);
+    margin-bottom: 30px;
+}
+
+.page-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--bs-dark);
+    margin-bottom: 4px;
+}
+
+.page-subtitle {
+    color: var(--bs-secondary);
+}
+
+.overall-badge {
+    background-color: rgba(var(--bs-primary-rgb), 0.1);
+    color: var(--bs-primary);
+    font-weight: 700;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.95rem;
+}
+
+/* Subject Attendance Grid */
+.attendance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.attendance-card {
+    background-color: var(--bs-white);
+    border: 1px solid var(--bs-border-color);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+}
+
+.card-top-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.subject-details-box {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.subject-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+}
+
+.subject-details-box h4 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--bs-dark);
+    margin-bottom: 2px;
+}
+
+.subject-details-box small {
+    color: var(--bs-secondary);
+    font-size: 0.85rem;
+}
+
+.status-tag {
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 6px;
+}
+
+.tag-good { background-color: rgba(var(--bs-success-rgb), 0.15); color: var(--bs-success); }
+.tag-low { background-color: rgba(var(--bs-warning-rgb), 0.15); color: var(--bs-warning); }
+
+/* Progress Bar */
+.progress-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.meta-count { color: var(--bs-secondary); font-weight: 500; }
+.meta-percent { font-weight: 700; color: var(--bs-primary); }
+
+.progress-track {
+    height: 10px;
+    background-color: var(--bs-border-color);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    border-radius: 5px;
+    transition: width 0.3s ease;
+}
+
+.bg-blue { background-color: var(--bs-primary); }
+.bg-cyan { background-color: var(--bs-info); }
+.bg-orange { background-color: var(--bs-warning); }
+.bg-green { background-color: var(--bs-success); }

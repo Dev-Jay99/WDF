@@ -1,0 +1,395 @@
+/* ==========================================================================
+   StudentHub Portal - Main Global Stylesheet (Light & Dark Theme Support)
+   ========================================================================== */
+
+/* ----- Color Variables & Design Tokens ----- */
+:root {
+    --bs-body-color: #1e293b;
+    --bs-body-bg: #f8fafc;
+    --bs-light: #f8fafc;
+    --bs-white: #ffffff;
+    --bs-dark: #0f172a;
+    --bs-secondary: #64748b;
+    --bs-border-color: #e2e8f0;
+    --bs-primary: #2563eb;
+    --bs-primary-rgb: 37, 99, 235;
+    --bs-success: #10b981;
+    --bs-success-rgb: 16, 185, 129;
+    --bs-warning: #f59e0b;
+    --bs-warning-rgb: 245, 158, 11;
+    --bs-info: #06b6d4;
+    --bs-info-rgb: 6, 182, 212;
+
+    --bg-header: rgba(255, 255, 255, 0.92);
+    --bg-card: #ffffff;
+    --bg-input: #ffffff;
+    --table-th-bg: #f1f5f9;
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    --card-shadow-hover: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+
+    --toggle-bg: #f1f5f9;
+    --toggle-border: #cbd5e1;
+    --toggle-color: #f59e0b;
+    --toggle-hover-bg: #e2e8f0;
+}
+
+[data-theme="dark"] {
+    --bs-body-color: #f1f5f9;
+    --bs-body-bg: #0b0f19;
+    --bs-light: #111827;
+    --bs-white: #1e293b;
+    --bs-dark: #f8fafc;
+    --bs-secondary: #94a3b8;
+    --bs-border-color: #334155;
+    --bs-primary: #3b82f6;
+    --bs-primary-rgb: 59, 130, 246;
+    --bs-success: #34d399;
+    --bs-success-rgb: 52, 211, 153;
+    --bs-warning: #fbbf24;
+    --bs-warning-rgb: 251, 191, 36;
+    --bs-info: #38bdf8;
+    --bs-info-rgb: 56, 189, 248;
+
+    --bg-header: rgba(15, 23, 42, 0.88);
+    --bg-card: #1e293b;
+    --bg-input: #0f172a;
+    --table-th-bg: #151e2e;
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+    --card-shadow-hover: 0 12px 25px -4px rgba(0, 0, 0, 0.6), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
+
+    --toggle-bg: #1e293b;
+    --toggle-border: #475569;
+    --toggle-color: #38bdf8;
+    --toggle-hover-bg: #334155;
+}
+
+/* ----- Reset & Base ----- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    color: var(--bs-body-color);
+    background-color: var(--bs-body-bg);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+main {
+    flex: 1;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* ----- Container ----- */
+.container {
+    width: 90%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* ----- Header / Navbar ----- */
+header {
+    background-color: var(--bg-header);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--bs-border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--bs-dark);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s ease;
+}
+
+.logo span {
+    color: var(--bs-primary);
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.nav-links a {
+    color: var(--bs-secondary);
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--bs-primary);
+}
+
+.nav-links a.active {
+    color: var(--bs-primary);
+    font-weight: 600;
+}
+
+/* ----- Theme Toggle Button ----- */
+.theme-toggle-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: var(--toggle-bg);
+    border: 1px solid var(--toggle-border);
+    color: var(--toggle-color);
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: var(--card-shadow);
+    flex-shrink: 0;
+    outline: none;
+    position: relative;
+}
+
+.theme-toggle-btn:hover {
+    background-color: var(--toggle-hover-bg);
+    transform: scale(1.08);
+    border-color: var(--bs-primary);
+}
+
+.theme-toggle-btn:focus-visible {
+    outline: 2px solid var(--bs-primary);
+    outline-offset: 2px;
+}
+
+.theme-toggle-btn svg {
+    width: 19px;
+    height: 19px;
+    transition: transform 0.4s ease;
+}
+
+.sun-icon {
+    display: block;
+    color: #f59e0b;
+}
+
+.moon-icon {
+    display: none;
+    color: #38bdf8;
+}
+
+[data-theme="dark"] .sun-icon {
+    display: none;
+}
+
+[data-theme="dark"] .moon-icon {
+    display: block;
+}
+
+/* Navbar Buttons & Primary Buttons */
+.btn-login {
+    border: 1px solid var(--bs-border-color);
+    color: var(--bs-dark) !important;
+}
+
+.btn-login:hover,
+.nav-links a.btn-login:hover {
+    background-color: var(--bs-light);
+    color: var(--bs-primary) !important;
+}
+
+.btn-register,
+.btn-primary,
+.nav-links a.btn-register,
+.nav-links a.btn-primary,
+.nav-links a.btn-register.active,
+.nav-links a.btn-primary.active {
+    background-color: var(--bs-primary) !important;
+    color: #ffffff !important;
+}
+
+.btn-register:hover,
+.btn-primary:hover,
+.nav-links a.btn-register:hover,
+.nav-links a.btn-primary:hover {
+    background-color: var(--bs-primary) !important;
+    color: #ffffff !important;
+    filter: brightness(0.9);
+}
+
+.btn-logout,
+.nav-links a.btn-logout {
+    border: 1px solid #dc3545 !important;
+    color: #dc3545 !important;
+    background-color: transparent !important;
+    cursor: pointer;
+}
+
+.btn-logout:hover,
+.nav-links a.btn-logout:hover {
+    background-color: #dc3545 !important;
+    color: #ffffff !important;
+}
+
+/* ----- Buttons ----- */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: background-color 0.2s, transform 0.1s, color 0.2s, border-color 0.2s;
+    text-align: center;
+}
+
+.btn-outline {
+    border-color: var(--bs-border-color);
+    background-color: var(--bs-white);
+    color: var(--bs-dark);
+}
+
+.btn-outline:hover {
+    background-color: var(--bs-light);
+    color: var(--bs-primary);
+    border-color: var(--bs-primary);
+}
+
+/* ----- Cards Base ----- */
+.card {
+    background-color: var(--bs-white);
+    border: 1px solid var(--bs-border-color);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: var(--card-shadow);
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* ----- Form Controls in Dark Mode ----- */
+[data-theme="dark"] .form-control,
+[data-theme="dark"] .form-select,
+[data-theme="dark"] .select-control,
+[data-theme="dark"] textarea {
+    background-color: var(--bg-input);
+    color: var(--bs-body-color);
+    border-color: var(--bs-border-color);
+}
+
+[data-theme="dark"] .form-control:focus,
+[data-theme="dark"] .form-select:focus,
+[data-theme="dark"] .select-control:focus,
+[data-theme="dark"] textarea:focus {
+    background-color: var(--bg-input);
+    color: var(--bs-body-color);
+    border-color: var(--bs-primary);
+    box-shadow: 0 0 0 3px rgba(var(--bs-primary-rgb), 0.3);
+}
+
+/* ----- Footer ----- */
+footer {
+    background-color: var(--bs-white);
+    border-top: 1px solid var(--bs-border-color);
+    padding: 40px 0 20px 0;
+    margin-top: 50px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-col h6 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: var(--bs-secondary);
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+}
+
+.footer-col ul li {
+    margin-bottom: 8px;
+}
+
+.footer-col ul li a {
+    color: var(--bs-secondary);
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+.footer-col ul li a:hover {
+    color: var(--bs-primary);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid var(--bs-border-color);
+    color: var(--bs-secondary);
+    font-size: 0.9rem;
+}
+
+/* ----- Responsive Navbar ----- */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .nav-actions {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+    }
+}

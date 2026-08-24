@@ -5,67 +5,99 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile - Student Hub Portal</title>
+    <link rel="icon" href="./images/logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/profile.css">
 </head>
 
 <body>
 
+    <!-- ===== HEADER / NAVBAR ===== -->
     <header>
-        <h1>Wlecome to Student Hub Portal</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="./pages/about.html">About</a></li>
-                <li><a href="./pages/contact.html">Contact</a></li>
-                <li><a href="./pages/register.html">Register</a></li>
-                <li><a href="./pages/login.html">Login</a></li>
-                <li><a href="./pages/dashboard.html">Dashboard</a></li>
-                <li><a href="./pages/profile.html">Profile</a></li>
-                <li><a href="./pages/assignment.html">Assignment</a></li>
-                <li><a href="./pages/attendance.html">Attendance</a></li>
-                <li><a href="./pages/courses.html">Courses</a></li>
-                <li><a href="./pages/result.html">Result</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <nav>
+                <a href="../index.html" class="logo">
+                    StudentHub
+                </a>
+                <div class="nav-actions">
+                    <ul class="nav-links">
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="attendance.html">Attendance</a></li>
+                        <li><a href="assignment.html">Assignment</a></li>
+                        <li><a href="result.html">Result</a></li>
+                        <li><a href="profile.html" class="active">Profile</a></li>
+                        <li><a href="#" class="btn-logout" id="navLogoutBtn">Logout</a></li>
+                    </ul>
+
+                </div>
+            </nav>
+        </div>
     </header>
 
     <main id="main-content">
-        <section>
-            <h2 id="profile-heading">My profile</h2>
-            <table>
-                <caption>Profile details</caption>
-                <tbody>
-                    <tr>
-                        <th>Name</th>
-                        <td>Jay Bhensdadiya</td>
-                    </tr>
-                    <tr>
-                        <th>Email</th>
-                        <td>Jay@mail.com</td>
-                    </tr>
-                    <tr>
-                        <th>Mobile</th>
-                        <td>9876543210</td>
-                    </tr>
-                    <tr>
-                        <th>Course</th>
-                        <td>B.Tech CE</td>
-                    </tr>
-                    <tr>
-                        <th>Year</th>
-                        <td>2nd</td>
-                    </tr>
-                </tbody>
-            </table>
-            <button>Edit Profile</button>
-            <button>Save</button>
+        <div class="container profile-container">
 
-        </section>
+            <div class="profile-header-row">
+                <h1>My Profile</h1>
+                <span class="status-badge">Active Student</span>
+            </div>
 
+            <!-- Profile Header Card -->
+            <div class="user-card">
+                <div class="user-info">
+                    <h3>Jay Bhensdadiya</h3>
+                    <p>Roll No: <strong>128</strong> | B.Tech Computer Engineering</p>
+                    <small> DEVANG PATEL INSTITUTE OF ADVANCED TECHNOLOGY AND RESEARCH (DEPSTAR)</small>
+                </div>
+            </div>
+
+            <!-- Profile Details Table & Form -->
+            <div class="details-card">
+                <h4> Personal & Academic Information</h4>
+
+                <table class="profile-table">
+                    <tbody>
+                        <tr>
+                            <th>Full Name</th>
+                            <td>Jay Bhensdadiya</td>
+                        </tr>
+                        <tr>
+                            <th>University Email</th>
+                            <td>d26dce128@charusat.edu.in</td>
+                        </tr>
+                        <tr>
+                            <th>Mobile Number</th>
+                            <td>+91 9427721097</td>
+                        </tr>
+                        <tr>
+                            <th>Degree / Course</th>
+                            <td>B.Tech Computer Engineering</td>
+                        </tr>
+                        <tr>
+                            <th>Current Year & Sem</th>
+                            <td>2nd Year (Semester 3)</td>
+                        </tr>
+                        <tr>
+                            <th>ID No.</th>
+                            <td>D26DCE128</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="action-buttons">
+                    <button class="btn btn-outline"> Edit Profile</button>
+                    <button class="btn btn-primary"> Save Changes</button>
+                </div>
+            </div>
+
+        </div>
     </main>
 
-    <footer>
-        <p>&copy; 2026 Student Hub Portal, B.Tech (CE) All rights reserved</p>
-    </footer>
+
+    <script src="../js/script.js"></script>
 </body>
 
 </html>

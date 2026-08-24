@@ -1,0 +1,109 @@
+/* About Page Styles (about.css)*/ 
+
+.page-header {
+    padding: 40px 0 20px 0;
+    text-align: center;
+}
+
+.page-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: var(--bs-dark);
+    margin-bottom: 10px;
+}
+
+.page-subtitle {
+    font-size: 1.1rem;
+    color: var(--bs-secondary);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Vision and Mission Grid */
+.vision-mission-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin: 40px 0;
+}
+
+.info-card {
+    background-color: var(--bs-white);
+    border: 1px solid var(--bs-border-color);
+    border-radius: 12px;
+    padding: 30px;
+}
+.info-card:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.info-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.info-card-icon {
+    font-size: 1.5rem;
+    background-color: var(--bs-light);
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-card h3 {
+    font-size: 1.3rem;
+    color: var(--bs-dark);
+}
+
+.info-card p {
+    color: var(--bs-secondary);
+    line-height: 1.7;
+}
+
+/* Tech Section */
+.tech-section {
+    background-color: var(--bs-white);
+    border: 1px solid var(--bs-border-color);
+    border-radius: 12px;
+    padding: 35px;
+    margin-bottom: 40px;
+}
+
+.tech-section h3 {
+    font-size: 1.3rem;
+    color: var(--bs-dark);
+    margin-bottom: 25px;
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.tech-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.tech-item-icon {
+    font-size: 1.25rem;
+}
+
+.tech-item h5 {
+    font-size: 1rem;
+    color: var(--bs-dark);
+    margin-bottom: 4px;
+}
+
+.tech-item p {
+    font-size: 0.9rem;
+    color: var(--bs-secondary);
+}
