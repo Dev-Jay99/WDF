@@ -1,0 +1,25 @@
+# ============================================================================
+# StudentHub Portal - Upload Directory Security Configuration
+# Practical 12: Advanced Extension - Upload Directory Protection
+# Prevents script execution of uploaded files (RCE prevention)
+# ============================================================================
+
+# Disable PHP execution in uploads directory
+<IfModule mod_php.c>
+    php_flag engine off
+</IfModule>
+<IfModule mod_php7.c>
+    php_flag engine off
+</IfModule>
+<IfModule mod_php8.c>
+    php_flag engine off
+</IfModule>
+
+# Block access to any executable scripts or server-side file types
+<FilesMatch "(?i)\.(php|php3|php4|php5|phtml|phps|pl|py|jsp|asp|sh|cgi|exe|bat|cmd)$">
+    Order Deny,Allow
+    Deny from all
+</FilesMatch>
+
+# Disable directory browsing
+Options -Indexes -ExecCGI

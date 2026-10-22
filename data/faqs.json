@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "category": "Academic",
+    "question": "How do I check my subject-wise attendance percentage?",
+    "answer": "You can view your live attendance stats by navigating to the Attendance tab in your student portal dashboard. It displays attended lectures, total conducted sessions, and your eligibility status."
+  },
+  {
+    "id": 2,
+    "category": "Account",
+    "question": "What should I do if I forget my login credentials?",
+    "answer": "Click on the 'Forgot Password' link on the Login page or reach out to the CHARUSAT IT Helpdesk / Academic Cell with your student enrollment ID for password resets."
+  },
+  {
+    "id": 3,
+    "category": "Academic",
+    "question": "How are semester grades and CGPA calculated?",
+    "answer": "CGPA is calculated based on the weighted credit point average across all completed semesters following CHARUSAT academic grading guidelines (10-point scale)."
+  },
+  {
+    "id": 4,
+    "category": "Academic",
+    "question": "Can I submit pending assignments after the due date?",
+    "answer": "Assignment submissions close automatically at midnight on the designated due date. Late submissions require explicit approval from your course instructor."
+  },
+  {
+    "id": 5,
+    "category": "Examination",
+    "question": "Where can I download the semester end-exam schedule?",
+    "answer": "Exam schedules are posted under the Results & Transcripts page and announced via the University Examination Cell portal 3 weeks before finals."
+  },
+  {
+    "id": 6,
+    "category": "Courses",
+    "question": "How do I register for departmental elective courses?",
+    "answer": "Elective course registrations open during the first week of every semester via the Courses module on your StudentHub dashboard."
+  },
+  {
+    "id": 7,
+    "category": "Campus",
+    "question": "How do I access campus Wi-Fi credentials?",
+    "answer": "Use your CHARUSAT university email ID and standard student login portal credentials to connect to the 'CHARUSAT-STUDENT' Wi-Fi network."
+  },
+  {
+    "id": 8,
+    "category": "Library",
+    "question": "What is the book borrowing limit for B.Tech students?",
+    "answer": "Undergraduate engineering students can borrow up to 4 books simultaneously for a period of 14 days, renewable once through the digital library desk."
+  },
+  {
+    "id": 9,
+    "category": "Academic",
+    "question": "What is the minimum attendance required to appear for end-term examinations?",
+    "answer": "Students must maintain a minimum of 80% aggregate attendance across theory lectures and practical lab sessions to be eligible for university exams."
+  },
+  {
+    "id": 10,
+    "category": "Hostel",
+    "question": "How do I submit leave applications for hostel stay?",
+    "answer": "Hostel leave requests must be submitted online through the StudentHub portal at least 24 hours in advance with parent acknowledgment."
+  },
+  {
+    "id": 11,
+    "category": "Fees",
+    "question": "How can I pay semester tuition fees online?",
+    "answer": "Tuition fees can be securely paid through the CHARUSAT Payment Gateway using Net Banking, UPI, or Credit/Debit cards with instant fee receipt generation."
+  },
+  {
+    "id": 12,
+    "category": "Examination",
+    "question": "What is the procedure for grade re-evaluation or answer-sheet viewing?",
+    "answer": "Apply within 7 days of result declaration through the Results portal by submitting the requisite re-checking fee per course."
+  },
+  {
+    "id": 13,
+    "category": "Placement",
+    "question": "When does campus placement drive registration begin?",
+    "answer": "Placement registrations begin in the 6th semester for eligible students with zero active backlogs and a minimum CGPA of 6.5."
+  },
+  {
+    "id": 14,
+    "category": "Clubs",
+    "question": "How do I join technical student chapters like IEEE, ACM, or GDSC?",
+    "answer": "Join club orientation sessions at the beginning of the odd semester or register directly via the StudentHub Events page."
+  },
+  {
+    "id": 15,
+    "category": "Transport",
+    "question": "Is university bus transportation available for day scholars?",
+    "answer": "Yes, CHARUSAT operates daily chartered bus routes connecting Ahmedabad, Vadodara, Anand, Nadiad, and surrounding towns."
+  },
+  {
+    "id": 16,
+    "category": "Account",
+    "question": "How do I update my registered contact number or residential address?",
+    "answer": "Navigate to the Profile page in the portal, click 'Edit Profile', and upload documentary address proof for admin approval."
+  }
+]

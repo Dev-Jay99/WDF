@@ -5,14 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Dashboard - Student Hub Portal</title>
-    <link rel="icon" href="./images/logo.png">
+    <link rel="icon" href="../images/logo.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/dashboard.css">
+    <script>
+        // Redirect to dynamic dashboard when hosted on XAMPP/Apache
+        if (window.location.protocol.startsWith('http')) {
+            window.location.replace('dashboard.php');
+        }
+    </script>
 </head>
 
 <body>
+    <!-- Skip to main content for accessibility (Practical 2 Advanced Extension) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- ===== HEADER / NAVBAR ===== -->
     <header>
@@ -28,9 +36,31 @@
                         <li><a href="attendance.html">Attendance</a></li>
                         <li><a href="assignment.html">Assignment</a></li>
                         <li><a href="result.html">Result</a></li>
+                        <li><a href="events.html">Events</a></li>
                         <li><a href="profile.html">Profile</a></li>
-                        <li><a href="#" class="btn-logout" id="navLogoutBtn">Logout</a></li>
+                        <li><a href="#" class="btn-logout" data-modal-target="#logoutModal">Logout</a></li>
                     </ul>
+                    <button type="button" class="theme-toggle-btn" aria-label="Toggle light/dark theme" title="Toggle theme">
+                        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </button>
+                    <button type="button" class="hamburger-btn" aria-label="Toggle navigation" aria-expanded="false">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
                 </div>
             </nav>
         </div>
@@ -38,6 +68,13 @@
 
     <main id="main-content">
         <div class="container">
+            <!-- Breadcrumb Navigation -->
+            <nav aria-label="breadcrumb" class="breadcrumb-nav">
+                <ol class="breadcrumb-list">
+                    <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Student Dashboard</li>
+                </ol>
+            </nav>
 
             <!-- Welcome Header -->
             <div class="dashboard-header">
@@ -155,7 +192,7 @@
                                 <span class="badge-tag">WDF</span>
                                 <small>Today</small>
                             </div>
-                            <h6>Practical 3 Submission Open</h6>
+                            <h6>Assignment 3 Submission Open</h6>
                             <p>Submit CSS Grid and Flexbox responsive layouts before Oct 25.</p>
                         </div>
                         <div class="announcement-item">
@@ -174,7 +211,24 @@
         </div>
     </main>
 
+    <!-- LOGOUT CONFIRMATION MODAL -->
+    <div class="modal-overlay" id="logoutModal" aria-hidden="true" role="dialog">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h4 class="modal-title">Confirm Logout</h4>
+                <button type="button" class="modal-close-btn" data-modal-close aria-label="Close modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to log out of your StudentHub account?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline" data-modal-close>Cancel</button>
+                <a href="login.html" class="btn btn-primary">Logout</a>
+            </div>
+        </div>
+    </div>
 
+    <script src="../js/script.js"></script>
 </body>
 
 </html>

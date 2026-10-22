@@ -1,0 +1,162 @@
+[
+  {
+    "id": "23DCE001",
+    "name": "Aarav Patel",
+    "course": "B.Tech Computer Engineering",
+    "semester": 3,
+    "email": "23dce001@charusat.edu.in",
+    "cgpa": 9.12,
+    "attendance": 92.5,
+    "city": "Ahmedabad"
+  },
+  {
+    "id": "23DCE002",
+    "name": "Bhavya Shah",
+    "course": "B.Tech Computer Engineering",
+    "semester": 3,
+    "email": "23dce002@charusat.edu.in",
+    "cgpa": 8.78,
+    "attendance": 88.0,
+    "city": "Vadodara"
+  },
+  {
+    "id": "23DCE003",
+    "name": "Chirag Joshi",
+    "course": "B.Tech Information Technology",
+    "semester": 3,
+    "email": "23dce003@charusat.edu.in",
+    "cgpa": 8.45,
+    "attendance": 84.2,
+    "city": "Surat"
+  },
+  {
+    "id": "23DCE004",
+    "name": "Diya Mehta",
+    "course": "B.Tech Computer Engineering",
+    "semester": 3,
+    "email": "23dce004@charusat.edu.in",
+    "cgpa": 9.35,
+    "attendance": 95.0,
+    "city": "Rajkot"
+  },
+  {
+    "id": "23DCE005",
+    "name": "Eshaan Dave",
+    "course": "B.Tech Computer Science & Engg",
+    "semester": 3,
+    "email": "23dce005@charusat.edu.in",
+    "cgpa": 7.92,
+    "attendance": 81.0,
+    "city": "Anand"
+  },
+  {
+    "id": "23DCE006",
+    "name": "Fenil Vora",
+    "course": "B.Tech Computer Engineering",
+    "semester": 3,
+    "email": "23dce006@charusat.edu.in",
+    "cgpa": 8.65,
+    "attendance": 89.4,
+    "city": "Bhavnagar"
+  },
+  {
+    "id": "23DCE007",
+    "name": "Gargi Trivedi",
+    "course": "B.Tech Information Technology",
+    "semester": 3,
+    "email": "23dce007@charusat.edu.in",
+    "cgpa": 9.04,
+    "attendance": 93.1,
+    "city": "Gandhinagar"
+  },
+  {
+    "id": "23DCE008",
+    "name": "Harshil Bhensdadiya",
+    "course": "B.Tech Computer Engineering",
+    "semester": 3,
+    "email": "23dce008@charusat.edu.in",
+    "cgpa": 8.85,
+    "attendance": 86.8,
+    "city": "Ahmedabad"
+  },
+  {
+    "id": "23DCE009",
+    "name": "Isha Parmar",
+    "course": "B.Tech Computer Science & Engg",
+    "semester": 3,
+    "email": "23dce009@charusat.edu.in",
+    "cgpa": 8.21,
+    "attendance": 83.5,
+    "city": "Vadodara"
+  },
+  {
+    "id": "23DCE010",
+    "name": "Jay Bhensdadiya",
+    "course": "B.Tech Computer Engineering",
+    "semester": 3,
+    "email": "jay@charusat.edu.in",
+    "cgpa": 8.85,
+    "attendance": 86.8,
+    "city": "Changa"
+  },
+  {
+    "id": "23DCE011",
+    "name": "Kavya Desai",
+    "course": "B.Tech Computer Engineering",
+    "semester": 3,
+    "email": "23dce011@charusat.edu.in",
+    "cgpa": 9.42,
+    "attendance": 96.2,
+    "city": "Surat"
+  },
+  {
+    "id": "23DCE012",
+    "name": "Laksh Pandya",
+    "course": "B.Tech Information Technology",
+    "semester": 3,
+    "email": "23dce012@charusat.edu.in",
+    "cgpa": 7.85,
+    "attendance": 79.5,
+    "city": "Jamnagar"
+  },
+  {
+    "id": "23DCE013",
+    "name": "Mansi Solanki",
+    "course": "B.Tech Computer Science & Engg",
+    "semester": 3,
+    "email": "23dce013@charusat.edu.in",
+    "cgpa": 8.91,
+    "attendance": 91.0,
+    "city": "Mehsana"
+  },
+  {
+    "id": "23DCE014",
+    "name": "Nirav Makwana",
+    "course": "B.Tech Computer Engineering",
+    "semester": 3,
+    "email": "23dce014@charusat.edu.in",
+    "cgpa": 8.33,
+    "attendance": 85.0,
+    "city": "Nadiad"
+  },
+  {
+    "id": "23DCE015",
+    "name": "Prisha Panchal",
+    "course": "B.Tech Computer Engineering",
+    "semester": 3,
+    "email": "23dce015@charusat.edu.in",
+    "cgpa": 9.18,
+    "attendance": 94.0,
+    "city": "Ahmedabad"
+  },
+  {
+    "id": "23DCE016",
+    "name": "Rohan Raval",
+    "course": "B.Tech Information Technology",
+    "semester": 3,
+    "email": "23dce016@charusat.edu.in",
+    "cgpa": 8.05,
+    "attendance": 82.3,
+    "city": "Vadodara"
+  }
+]

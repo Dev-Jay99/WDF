@@ -1,0 +1,289 @@
+<?php
+require_once __DIR__ . '/includes/auth.php';
+$isAuth = is_logged_in();
+$user   = get_logged_in_user();
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Hub Portal</title>
+    <link rel="icon" href="./images/logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/style.css">
+
+
+</head>
+
+<body>
+    <!-- Skip to main content for accessibility (Practical 2 Advanced Extension) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!--  HEADER / NAVBAR  -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.php" class="logo">
+                    StudentHub
+                </a>
+                <div class="nav-actions">
+                    <ul class="nav-links">
+                        <li><a href="index.php" class="active">Home</a></li>
+                        <li><a href="./pages/about.html">About</a></li>
+                        <li><a href="./pages/events.html">Events</a></li>
+                        <li><a href="./pages/faq.html">FAQ</a></li>
+                        <li><a href="./pages/contact.php">Contact</a></li>
+                        <?php if ($isAuth): ?>
+                            <?php if ($user['role'] === 'admin'): ?>
+                                <li><a href="./pages/admin_dashboard.php" style="color: #8b5cf6; font-weight: 600;">Admin Panel</a></li>
+                                <li><a href="./pages/students.php">Students</a></li>
+                            <?php else: ?>
+                                <li><a href="./pages/dashboard.php" style="color: var(--bs-primary); font-weight: 600;">Dashboard</a></li>
+                            <?php endif; ?>
+                            <li><a href="./pages/logout.php" class="btn-logout" style="color: #ef4444; font-weight: 600;">Logout (<?= htmlspecialchars($user['name']) ?>)</a></li>
+                        <?php else: ?>
+                            <li><a href="./pages/view_records.php" style="color: var(--bs-primary); font-weight: 600;">Records</a></li>
+                            <li><a href="./pages/login.php" class="btn-login">Login</a></li>
+                            <li><a href="./pages/register.php" class="btn-register">Register</a></li>
+                        <?php endif; ?>
+                    </ul>
+                    <button type="button" class="theme-toggle-btn" aria-label="Toggle light/dark theme" title="Toggle theme">
+                        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </button>
+                    <button type="button" class="hamburger-btn" aria-label="Toggle navigation" aria-expanded="false">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+
+        <!-- NOTIFICATION BANNER -->
+        <div class="notification-banner notification-info" data-banner-id="index-announcement">
+            <div class="container notification-content">
+                <div class="notification-text">
+                    <strong>Mid-Semester Announcement:</strong> Semester 3 mid-term examination schedule and lab submission deadlines have been updated.
+                </div>
+                <button type="button" class="notification-close" aria-label="Dismiss banner">&times;</button>
+            </div>
+        </div>
+
+        <!-- HERO SECTION -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <p class="tagline"> Centralized Academic Management</p>
+                    <h1 class="hero-title">Your University Journey, Simplified.</h1>
+                    <p class="hero-description">
+                        A complete student management portal for courses, attendance, assignments, and results.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="./pages/register.php" class="btn btn-primary">Get Started (Register)</a>
+                        <a href="./pages/view_records.php" class="btn btn-outline">View Stored Records</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- IMAGE / CONTENT SLIDER SECTION -->
+        <section class="slider-section">
+            <div class="container">
+                <div class="slider-container">
+                    <div class="slider-track">
+                        
+                        <!-- Slide 1 -->
+                        <div class="slide-item">
+                            <div class="slide-content">
+                                <span class="slide-badge">Academic Excellence</span>
+                                <h3 class="slide-title">Interactive Course Tracking & Attendance</h3>
+                                <p class="slide-description">Monitor your daily attendance percentages, pending assignment deadlines, and semester SGPA/CGPA with real-time updates.</p>
+                                <a href="./pages/courses.html" class="btn btn-primary">View Enrolled Courses</a>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div class="slide-item">
+                            <div class="slide-content">
+                                <span class="slide-badge">Campus Life & Events</span>
+                                <h3 class="slide-title">DEPSTAR Computer Engineering Department</h3>
+                                <p class="slide-description">Stay informed about upcoming practical vivas, tech symposiums, hackathons, and departmental workshops.</p>
+                                <a href="./pages/about.html" class="btn btn-outline">Learn About Us</a>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3 -->
+                        <div class="slide-item">
+                            <div class="slide-content">
+                                <span class="slide-badge">Digital Transcripts</span>
+                                <h3 class="slide-title">Instant Results & Grade Sheet Access</h3>
+                                <p class="slide-description">Securely download official grade transcripts, check course credits, and view detailed subject breakdowns.</p>
+                                <a href="./pages/dashboard.html" class="btn btn-primary">Go to Dashboard</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Slider Controls -->
+                    <button type="button" class="slider-btn slider-prev" aria-label="Previous Slide">&larr;</button>
+                    <button type="button" class="slider-btn slider-next" aria-label="Next Slide">&rarr;</button>
+
+                    <!-- Slider Dots -->
+                    <div class="slider-dots"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURES SECTION -->
+        <section id="features" class="features-section">
+            <div class="container">
+                <h2 class="section-title">Key Student Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon"></div>
+                        <h5>Student Dashboard</h5>
+                        <p>Track overall progress and key stats.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"></div>
+                        <h5>Course Enrollment</h5>
+                        <p>View and manage your academic courses.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"></div>
+                        <h5>Attendance Tracker</h5>
+                        <p>Monitor your daily attendance and records.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"></div>
+                        <h5>Results & Transcripts</h5>
+                        <p>Access and download your grades and results.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COLLAPSIBLE FAQ SECTION -->
+        <section class="faq-section">
+            <div class="container">
+                <h2 class="section-title text-center mb-4">Frequently Asked Questions</h2>
+                <div class="faq-accordion" data-single="true">
+                    
+                    <div class="faq-item">
+                        <button type="button" class="faq-header" aria-expanded="false">
+                            <span>How do I check my subject-wise attendance percentage?</span>
+                            <span class="faq-icon">&#9660;</span>
+                        </button>
+                        <div class="faq-content">
+                            <div class="faq-body">
+                                You can view your live attendance stats by navigating to the <strong>Attendance</strong> tab in your student portal dashboard. It displays attended lectures, total conducted sessions, and your eligibility status.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button type="button" class="faq-header" aria-expanded="false">
+                            <span>What should I do if I forget my login credentials?</span>
+                            <span class="faq-icon">&#9660;</span>
+                        </button>
+                        <div class="faq-content">
+                            <div class="faq-body">
+                                Click on the "Forgot Password" link on the Login page or reach out to the CHARUSAT IT Helpdesk / Academic Cell with your student enrollment ID for password resets.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button type="button" class="faq-header" aria-expanded="false">
+                            <span>How are semester grades and CGPA calculated?</span>
+                            <span class="faq-icon">&#9660;</span>
+                        </button>
+                        <div class="faq-content">
+                            <div class="faq-body">
+                                CGPA is calculated based on the weighted credit point average across all completed semesters following CHARUSAT academic grading guidelines (10-point scale).
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button type="button" class="faq-header" aria-expanded="false">
+                            <span>Can I submit pending assignments after the due date?</span>
+                            <span class="faq-icon">&#9660;</span>
+                        </button>
+                        <div class="faq-content">
+                            <div class="faq-body">
+                                Assignment submissions close automatically at midnight on the designated due date. Late submissions require explicit approval from your course instructor.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!--  FOOTER  -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h6>Quick Links</h6>
+                    <ul>
+                        <li><a href="./pages/about.html">About</a></li>
+                        <li><a href="./pages/events.html">Events</a></li>
+                        <li><a href="./pages/faq.html">FAQ</a></li>
+                        <li><a href="./pages/feedback.html">Feedback</a></li>
+                        <li><a href="./pages/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h6>Portal Pages</h6>
+                    <ul>
+                        <li><a href="./pages/dashboard.html">Dashboard</a></li>
+                        <li><a href="./pages/courses.html">Courses</a></li>
+                        <li><a href="./pages/attendance.html">Attendance</a></li>
+                        <li><a href="./pages/assignment.html">Assignments</a></li>
+                        <li><a href="./pages/result.html">Results</a></li>
+                        <li><a href="./pages/profile.html">Profile</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h6>Contact</h6>
+                    <ul>
+                        <li> CHARUSAT Campus, Changa</li>
+                        <li> +91 2697 265011</li>
+                        <li> info@charusat.ac.in</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Student Hub Portal, B.Tech (CE)</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

@@ -1,124 +1,390 @@
 /* ==========================================================================
-   Register Page Styles (register.css)
+   StudentHub Portal - Modern Registration Styles (register.css)
+   Clean Centered Card Layout Matching login.php Authentication Interface
    ========================================================================== */
 
-.register-container {
-    padding: 50px 0;
+/* Main Auth Container - Centered on screen matching login */
+.auth-container {
+    padding: 10px 16px 40px 16px;
     display: flex;
     justify-content: center;
-}
-
-.register-card {
-    background-color: var(--bs-white);
-    border: 1px solid var(--bs-border-color);
-    border-radius: 16px;
-    padding: 40px;
-    width: 100%;
-    max-width: 650px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-}
-
-.register-header {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.register-icon {
-    font-size: 2rem;
-    background-color: rgba(var(--bs-primary-rgb), 0.1);
-    width: 54px;
-    height: 54px;
-    border-radius: 12px;
-    display: flex;
     align-items: center;
-    justify-content: center;
-    margin: 0 auto 15px auto;
+    min-height: calc(100vh - 180px);
 }
 
-.register-header h2 {
-    font-size: 1.6rem;
+/* Card Surface - Matching Auth Card proportions & elevation */
+.auth-card.register-card {
+    background-color: var(--card-bg, #ffffff);
+    border: 1px solid var(--border-color, #e2e8f0);
+    border-radius: 16px;
+    padding: 28px 34px;
+    width: 100%;
+    max-width: 640px;
+    box-shadow: var(--card-shadow, 0 10px 25px -5px rgba(0, 0, 0, 0.1));
+    transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    box-sizing: border-box;
+}
+
+/* Header Section */
+.auth-header {
+    text-align: center;
+    margin-bottom: 22px;
+}
+
+.auth-header h2 {
+    font-size: 1.45rem;
     font-weight: 700;
-    color: var(--bs-dark);
-    margin-bottom: 6px;
+    color: var(--bs-dark, #0f172a);
+    margin: 0 0 5px 0;
+    letter-spacing: -0.015em;
 }
 
-.register-header p {
-    font-size: 0.9rem;
-    color: var(--bs-secondary);
+.auth-header p {
+    font-size: 0.85rem;
+    color: var(--text-muted, #64748b);
+    margin: 0 auto;
+    line-height: 1.45;
 }
 
+/* Form Grid - Balanced 2 Columns */
 .form-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+    gap: 12px 16px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
 }
 
 .form-group-full {
     grid-column: span 2;
 }
 
+/* Field Labels */
 .form-group label {
     display: block;
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     font-weight: 600;
-    color: var(--bs-dark);
-    margin-bottom: 6px;
+    color: var(--bs-dark, #1e293b);
+    margin-bottom: 5px;
 }
 
-.form-control, .form-select {
+/* Inputs & Dropdowns */
+.form-control,
+.form-select {
     width: 100%;
-    padding: 10px 14px;
-    font-size: 0.95rem;
-    border: 1px solid var(--bs-border-color);
+    height: 40px;
+    padding: 8px 12px;
+    font-size: 0.88rem;
+    font-family: inherit;
+    border: 1px solid var(--border-color, #cbd5e1);
     border-radius: 8px;
     outline: none;
-    background-color: var(--bs-white);
+    background-color: var(--bg-input, #ffffff);
+    color: var(--bs-body-color, #0f172a);
+    box-sizing: border-box;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
-.form-control:focus, .form-select:focus {
-    border-color: var(--bs-primary);
-    box-shadow: 0 0 0 3px rgba(var(--bs-primary-rgb), 0.25);
+.form-control::placeholder {
+    color: #94a3b8;
 }
 
-.terms-group {
+.form-control:focus,
+.form-select:focus {
+    border-color: #2563eb;
+    background-color: var(--bg-input, #ffffff);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.22);
+}
+
+/* Gender Options - Segmented Buttons */
+.gender-options {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    height: 40px;
+}
+
+.gender-options label {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    height: 100%;
+    padding: 0 10px;
+    font-size: 0.84rem;
+    font-weight: 500;
+    color: var(--bs-dark, #334155);
+    background: var(--bg-surface, #f8fafc);
+    border: 1px solid var(--border-color, #e2e8f0);
+    border-radius: 8px;
+    cursor: pointer;
+    box-sizing: border-box;
+    margin: 0;
+    transition: all 0.2s ease;
+}
+
+.gender-options label:hover {
+    border-color: #94a3b8;
+    background: #f1f5f9;
+}
+
+.gender-options input[type="radio"] {
+    accent-color: #2563eb;
+    margin: 0;
+}
+
+/* Dependent Dropdown Grid */
+.dependent-location-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+/* HTML5 Canvas Custom CAPTCHA */
+.captcha-container {
     display: flex;
     align-items: center;
     gap: 8px;
-    font-size: 0.85rem;
-    color: var(--bs-secondary);
-    margin-top: 10px;
+    height: 40px;
 }
 
-.terms-group a {
-    color: var(--bs-primary);
+#captchaCanvas {
+    width: 140px;
+    height: 40px;
+    min-width: 140px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color, #cbd5e1);
+    background: var(--bg-surface, #f8fafc);
+    box-sizing: border-box;
+}
+
+.btn-refresh-captcha {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    font-size: 1.15rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    border: 1px solid var(--border-color, #cbd5e1);
+    background: var(--bg-surface, #f8fafc);
+    color: var(--bs-dark, #334155);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-refresh-captcha:hover {
+    background: #e2e8f0;
+    color: #0f172a;
+    transform: rotate(45deg);
+}
+
+#captchaInput {
+    height: 40px;
+    flex: 1;
+    min-width: 80px;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* Password Strength Meter */
+#passwordStrengthContainer {
+    margin-top: 6px;
+}
+
+#passwordStrengthContainer > div:first-child {
+    height: 5px !important;
+    background-color: var(--border-color, #e2e8f0) !important;
+    border-radius: 9999px !important;
+    overflow: hidden;
+}
+
+/* Validation & Error Messages */
+.error-message,
+.server-error {
+    font-size: 0.76rem;
+    font-weight: 500;
+    color: #ef4444;
+    line-height: 1.25;
+    margin-top: 3px;
+    min-height: 14px;
+    display: block;
+}
+
+.form-control.is-invalid,
+.form-select.is-invalid,
+.input-error {
+    border-color: #ef4444 !important;
+    background-color: rgba(239, 68, 68, 0.03);
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.12) !important;
+}
+
+.form-control.is-valid,
+.form-select.is-valid {
+    border-color: #10b981 !important;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.12) !important;
+}
+
+/* Full Width Submit Button - Exactly matching login in screenshot */
+.btn-full {
+    width: 100%;
+    height: 44px;
+    padding: 10px;
+    font-size: 0.96rem;
+    font-weight: 600;
+    border-radius: 8px;
+    background: #2563eb;
+    color: #ffffff;
+    border: none;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-full:hover {
+    background: #1d4ed8;
+    color: #ffffff;
+}
+
+.btn-full:active {
+    transform: scale(0.99);
+}
+
+/* Auth Card Footer */
+.auth-footer {
+    text-align: center;
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border-color, #e2e8f0);
+    font-size: 0.84rem;
+    color: var(--text-muted, #64748b);
+}
+
+.auth-footer a {
+    color: #2563eb;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.auth-footer a:hover {
     text-decoration: underline;
 }
 
-.btn-submit {
-    width: 100%;
-    padding: 12px;
-    margin-top: 10px;
-}
-
-.register-footer {
-    text-align: center;
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1px solid var(--bs-border-color);
-    font-size: 0.9rem;
-    color: var(--bs-secondary);
-}
-
-.register-footer a {
-    color: var(--bs-primary);
-    font-weight: 600;
-}
-
-@media (max-width: 600px) {
+/* Responsive Media Queries */
+@media (max-width: 640px) {
+    .auth-card.register-card {
+        padding: 22px 18px;
+    }
     .form-grid {
         grid-template-columns: 1fr;
+        gap: 12px;
     }
     .form-group-full {
         grid-column: span 1;
     }
+    .dependent-location-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+}
+
+/* ==========================================================================
+   Dark Theme Specific Overrides (Matching Login Screen in Screenshot)
+   ========================================================================== */
+[data-theme="dark"] .auth-card.register-card {
+    background-color: var(--card-bg, #1e293b) !important;
+    border-color: var(--border-color, #334155) !important;
+    box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.6) !important;
+}
+
+[data-theme="dark"] .auth-header h2 {
+    color: #f8fafc !important;
+}
+
+[data-theme="dark"] .auth-header p {
+    color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .form-group label {
+    color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .form-control,
+[data-theme="dark"] .form-select {
+    background-color: #0f172a !important;
+    border-color: #334155 !important;
+    color: #f1f5f9 !important;
+}
+
+[data-theme="dark"] .form-control::placeholder {
+    color: #64748b !important;
+}
+
+[data-theme="dark"] .form-control:focus,
+[data-theme="dark"] .form-select:focus {
+    background-color: #0f172a !important;
+    border-color: #3b82f6 !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25) !important;
+}
+
+[data-theme="dark"] .gender-options label {
+    background: #0f172a !important;
+    border-color: #334155 !important;
+    color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .gender-options label:hover {
+    background: #1e293b !important;
+    border-color: #475569 !important;
+}
+
+[data-theme="dark"] #captchaCanvas {
+    background: #0f172a !important;
+    border-color: #334155 !important;
+}
+
+[data-theme="dark"] .btn-refresh-captcha {
+    background: #0f172a !important;
+    border-color: #334155 !important;
+    color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .btn-refresh-captcha:hover {
+    background: #1e293b !important;
+    color: #f8fafc !important;
+}
+
+[data-theme="dark"] #passwordStrengthContainer > div:first-child {
+    background-color: #334155 !important;
+}
+
+[data-theme="dark"] .btn-full {
+    background: #2563eb !important;
+    color: #ffffff !important;
+}
+
+[data-theme="dark"] .btn-full:hover {
+    background: #1d4ed8 !important;
+}
+
+[data-theme="dark"] .auth-footer {
+    border-top-color: #334155 !important;
+    color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .auth-footer a {
+    color: #60a5fa !important;
 }

@@ -15,29 +15,65 @@
 </head>
 
 <body>
+    <!-- Skip to main content for accessibility (Practical 2 Advanced Extension) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!--  HEADER / NAVBAR  -->
     <header>
         <div class="container">
             <nav>
                 <a href="index.html" class="logo">
-                    <span></span> StudentHub
+                    StudentHub
                 </a>
                 <div class="nav-actions">
                     <ul class="nav-links">
                         <li><a href="index.html" class="active">Home</a></li>
                         <li><a href="./pages/about.html">About</a></li>
-                        <li><a href="./pages/login.html" class="btn-login">Login</a></li>
-                        <li><a href="./pages/register.html" class="btn-register">Register</a></li>
-                        <li><a href="./pages/contact.html">Contact</a></li>
+                        <li><a href="./pages/events.html">Events</a></li>
+                        <li><a href="./pages/faq.html">FAQ</a></li>
+                        <li><a href="./pages/contact.php">Contact</a></li>
+                        <li><a href="./pages/view_records.php" style="color: var(--bs-primary); font-weight: 600;">Records</a></li>
+                        <li><a href="test_connection.php" style="color: #10b981; font-weight: 600;">Database Status</a></li>
+                        <li><a href="./pages/login.php" class="btn-login">Login</a></li>
+                        <li><a href="./pages/register.php" class="btn-register">Register</a></li>
                     </ul>
-
+                    <button type="button" class="theme-toggle-btn" aria-label="Toggle light/dark theme" title="Toggle theme">
+                        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </button>
+                    <button type="button" class="hamburger-btn" aria-label="Toggle navigation" aria-expanded="false">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
                 </div>
             </nav>
         </div>
     </header>
 
-    <main>
+    <main id="main-content">
+
+        <!-- NOTIFICATION BANNER -->
+        <div class="notification-banner notification-info" data-banner-id="index-announcement">
+            <div class="container notification-content">
+                <div class="notification-text">
+                    <strong>Mid-Semester Announcement:</strong> Semester 3 mid-term examination schedule and lab submission deadlines have been updated.
+                </div>
+                <button type="button" class="notification-close" aria-label="Dismiss banner">&times;</button>
+            </div>
+        </div>
 
         <!-- HERO SECTION -->
         <section class="hero-section">
@@ -49,9 +85,57 @@
                         A complete student management portal for courses, attendance, assignments, and results.
                     </p>
                     <div class="hero-buttons">
-                        <a href="./pages/register.html" class="btn btn-primary">Get Started</a>
-                        <a href="#features" class="btn btn-outline">Explore Features</a>
+                        <a href="./pages/register.php" class="btn btn-primary">Get Started (Register)</a>
+                        <a href="./pages/view_records.php" class="btn btn-outline">View Stored Records</a>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- IMAGE / CONTENT SLIDER SECTION -->
+        <section class="slider-section">
+            <div class="container">
+                <div class="slider-container">
+                    <div class="slider-track">
+                        
+                        <!-- Slide 1 -->
+                        <div class="slide-item">
+                            <div class="slide-content">
+                                <span class="slide-badge">Academic Excellence</span>
+                                <h3 class="slide-title">Interactive Course Tracking & Attendance</h3>
+                                <p class="slide-description">Monitor your daily attendance percentages, pending assignment deadlines, and semester SGPA/CGPA with real-time updates.</p>
+                                <a href="./pages/courses.html" class="btn btn-primary">View Enrolled Courses</a>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div class="slide-item">
+                            <div class="slide-content">
+                                <span class="slide-badge">Campus Life & Events</span>
+                                <h3 class="slide-title">DEPSTAR Computer Engineering Department</h3>
+                                <p class="slide-description">Stay informed about upcoming practical vivas, tech symposiums, hackathons, and departmental workshops.</p>
+                                <a href="./pages/about.html" class="btn btn-outline">Learn About Us</a>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3 -->
+                        <div class="slide-item">
+                            <div class="slide-content">
+                                <span class="slide-badge">Digital Transcripts</span>
+                                <h3 class="slide-title">Instant Results & Grade Sheet Access</h3>
+                                <p class="slide-description">Securely download official grade transcripts, check course credits, and view detailed subject breakdowns.</p>
+                                <a href="./pages/dashboard.html" class="btn btn-primary">Go to Dashboard</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Slider Controls -->
+                    <button type="button" class="slider-btn slider-prev" aria-label="Previous Slide">&larr;</button>
+                    <button type="button" class="slider-btn slider-next" aria-label="Next Slide">&rarr;</button>
+
+                    <!-- Slider Dots -->
+                    <div class="slider-dots"></div>
                 </div>
             </div>
         </section>
@@ -85,6 +169,64 @@
             </div>
         </section>
 
+        <!-- COLLAPSIBLE FAQ SECTION -->
+        <section class="faq-section">
+            <div class="container">
+                <h2 class="section-title text-center mb-4">Frequently Asked Questions</h2>
+                <div class="faq-accordion" data-single="true">
+                    
+                    <div class="faq-item">
+                        <button type="button" class="faq-header" aria-expanded="false">
+                            <span>How do I check my subject-wise attendance percentage?</span>
+                            <span class="faq-icon">&#9660;</span>
+                        </button>
+                        <div class="faq-content">
+                            <div class="faq-body">
+                                You can view your live attendance stats by navigating to the <strong>Attendance</strong> tab in your student portal dashboard. It displays attended lectures, total conducted sessions, and your eligibility status.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button type="button" class="faq-header" aria-expanded="false">
+                            <span>What should I do if I forget my login credentials?</span>
+                            <span class="faq-icon">&#9660;</span>
+                        </button>
+                        <div class="faq-content">
+                            <div class="faq-body">
+                                Click on the "Forgot Password" link on the Login page or reach out to the CHARUSAT IT Helpdesk / Academic Cell with your student enrollment ID for password resets.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button type="button" class="faq-header" aria-expanded="false">
+                            <span>How are semester grades and CGPA calculated?</span>
+                            <span class="faq-icon">&#9660;</span>
+                        </button>
+                        <div class="faq-content">
+                            <div class="faq-body">
+                                CGPA is calculated based on the weighted credit point average across all completed semesters following CHARUSAT academic grading guidelines (10-point scale).
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button type="button" class="faq-header" aria-expanded="false">
+                            <span>Can I submit pending assignments after the due date?</span>
+                            <span class="faq-icon">&#9660;</span>
+                        </button>
+                        <div class="faq-content">
+                            <div class="faq-body">
+                                Assignment submissions close automatically at midnight on the designated due date. Late submissions require explicit approval from your course instructor.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <!--  FOOTER  -->
@@ -95,8 +237,11 @@
                     <h6>Quick Links</h6>
                     <ul>
                         <li><a href="./pages/about.html">About</a></li>
-                        <li><a href="#features">Features</a></li>
-                        <li><a href="#">Legal</a></li>
+                        <li><a href="./pages/events.html">Events</a></li>
+                        <li><a href="./pages/faq.html">FAQ</a></li>
+                        <li><a href="./pages/feedback.html">Feedback</a></li>
+                        <li><a href="./pages/contact.html">Contact</a></li>
+                        <li><a href="test_connection.php" style="color: #10b981; font-weight: 600;">DB Connectivity Test</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -125,7 +270,7 @@
         </div>
     </footer>
 
-
+    <script src="./js/script.js"></script>
 </body>
 
 </html>

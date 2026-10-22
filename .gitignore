@@ -1,0 +1,19 @@
+# Operating System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE & Editor Configuration
+.vscode/
+.idea/
+*.suo
+*.user
+
+# Environment & Local Overrides (keep .env.example)
+.env
+*.local
+
+# Temporary, Log & Cache Files
+*.tmp
+*.log
+*.bak

@@ -1,0 +1,9 @@
+Student ID,Timestamp,Full Name,Email,Phone,Course,Year,Gender,Country,State,City,Password Hash
+STU-2026-A101,2026-09-28 10:15:22,Aarav Patel,23dce001@charusat.edu.in,+91 9825112233,B.Tech CE,2nd Year,Male,India,Gujarat,Ahmedabad,$2y$10$eW7sH0wH5Z3m0qI5k4x0u.4Rlm7yH6D8f5h2l4j6m8o0q2s4u6w8y
+STU-2026-B202,2026-09-28 11:20:45,Bhavya Shah,23dce002@charusat.edu.in,+91 9879001122,B.Tech CE,2nd Year,Male,India,Gujarat,Vadodara,$2y$10$eW7sH0wH5Z3m0qI5k4x0u.4Rlm7yH6D8f5h2l4j6m8o0q2s4u6w8y
+STU-2026-C303,2026-09-28 12:45:10,Chirag Joshi,23dce003@charusat.edu.in,+91 9898223344,B.Tech IT,2nd Year,Male,India,Gujarat,Surat,$2y$10$eW7sH0wH5Z3m0qI5k4x0u.4Rlm7yH6D8f5h2l4j6m8o0q2s4u6w8y
+STU-2026-D404,2026-09-29 09:30:18,Diya Mehta,23dce004@charusat.edu.in,+91 9724556677,B.Tech CE,2nd Year,Female,India,Gujarat,Rajkot,$2y$10$eW7sH0wH5Z3m0qI5k4x0u.4Rlm7yH6D8f5h2l4j6m8o0q2s4u6w8y
+STU-2026-E505,2026-09-29 14:10:05,Eshaan Dave,23dce005@charusat.edu.in,+91 9601334455,B.Tech CSE,2nd Year,Male,India,Gujarat,Anand,$2y$10$eW7sH0wH5Z3m0qI5k4x0u.4Rlm7yH6D8f5h2l4j6m8o0q2s4u6w8y
+STU-2026-J606,2026-09-30 08:50:33,Jay Bhensdadiya,jay@charusat.edu.in,+91 9876543210,B.Tech CE,2nd Year,Male,India,Gujarat,Ahmedabad,$2y$10$eW7sH0wH5Z3m0qI5k4x0u.4Rlm7yH6D8f5h2l4j6m8o0q2s4u6w8y
+"2026-10-19 21:00:34",23DCE632,"Jay Bhensdadiya",jaybhensdadiy@gmail.com,9427721097,"B.Tech CE","2nd Year",Male,India,Gujarat,Rajkot,$2y$10$k4XKfCQeJRo2kZkgLCJ8AetlzS/B3PnwwwyKN/qvgnzsmo0PXhH1W
+"2026-10-19 21:10:01",23DCE426,"Jay Bhensdadiya",jaybhensdadiy1233@gmail.com,7428730894,"B.Tech CE","2nd Year",Male,India,Gujarat,Rajkot,$2y$10$o0ivnS5SwCTOgmrdIqpFHuj2YvmDFJfjUBPfQ.emUvUOFuUkk75dS

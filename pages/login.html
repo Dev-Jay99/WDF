@@ -5,15 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Student Hub Portal</title>
-    <link rel="icon" href="./images/logo.png">
+    <link rel="icon" href="../images/logo.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/login.css">
     <link rel="stylesheet" href="../css/style.css">
-
+    <script>
+        // Redirect to dynamic PHP login page when hosted on XAMPP/Apache
+        if (window.location.protocol.startsWith('http')) {
+            window.location.replace('login.php' + window.location.search);
+        }
+    </script>
 </head>
 
 <body>
+    <!-- Skip to main content for accessibility (Practical 2 Advanced Extension) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- ===== HEADER / NAVBAR ===== -->
     <header>
@@ -26,33 +33,68 @@
                     <ul class="nav-links">
                         <li><a href="../index.html">Home</a></li>
                         <li><a href="about.html">About</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="feedback.html">Feedback</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                         <li><a href="login.html" class="btn-login active">Login</a></li>
                         <li><a href="register.html" class="btn-register">Register</a></li>
-                        <li><a href="contact.html">Contact</a></li>
                     </ul>
+                    <button type="button" class="theme-toggle-btn" aria-label="Toggle light/dark theme" title="Toggle theme">
+                        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </button>
+                    <button type="button" class="hamburger-btn" aria-label="Toggle navigation" aria-expanded="false">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
                 </div>
             </nav>
         </div>
     </header>
 
     <main id="main-content">
-        <div class="container auth-container">
-            <div class="auth-card">
+        <div class="container">
+            <!-- Breadcrumb Navigation -->
+            <nav aria-label="breadcrumb" class="breadcrumb-nav">
+                <ol class="breadcrumb-list">
+                    <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Student Login</li>
+                </ol>
+            </nav>
+
+            <div class="auth-container">
+                <div class="auth-card">
                 
                 <div class="auth-header">
                     <h2>Login to StudentHub</h2>
                     <p>Welcome back! Enter your credentials to access your portal.</p>
                 </div>
 
-                <form id="loginForm" action="#" method="POST">
+                <form id="loginForm" action="process_login.php" method="POST" novalidate>
                     <div class="form-group">
                         <label for="email">University Email</label>
                         <input type="email" id="email" name="email" class="form-control" placeholder="student@charusat.edu.in" required>
+                        <small class="error-message" id="loginEmailError"></small>
                     </div>
 
                     <div class="form-group">
                         <label for="password">Password</label>
                         <input type="password" id="password" name="password" class="form-control" placeholder="••••••••" required>
+                        <small class="error-message" id="loginPasswordError"></small>
                     </div>
 
                     <div class="form-actions-row">
@@ -72,7 +114,8 @@
 
             </div>
         </div>
-    </main>
+    </div>
+</main>
 
     <script src="../js/script.js"></script>
 </body>
