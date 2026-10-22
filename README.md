@@ -1,11 +1,12 @@
 # StudentHub Portal — Academic Lifecycle & Campus Management System
 
-![PHP Version](https://img.shields.io/badge/PHP-8.2.12-blue?style=flat-square&logo=php)
-![Database](https://img.shields.io/badge/MariaDB-10.4.32%20InnoDB-teal?style=flat-square&logo=mariadb)
-![Architecture](https://img.shields.io/badge/Architecture-3NF%20Relational%20%2B%20REST%20API-indigo?style=flat-square)
-![Tests](https://img.shields.io/badge/Practical%20Tests-15%2F15%20Passed%20(100%25)-success?style=flat-square)
-![Security](https://img.shields.io/badge/Security-Bcrypt%20%7C%20CSRF%20%7C%20RBAC%20%7C%20Timeout-crimson?style=flat-square)
-![Institution](https://img.shields.io/badge/CHARUSAT-DEPSTAR%20IT-navy?style=flat-square)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![PHP](https://img.shields.io/badge/PHP_8.2-777BB4?style=flat-square&logo=php&logoColor=white)
+![MariaDB](https://img.shields.io/badge/MariaDB_10.4-003545?style=flat-square&logo=mariadb&logoColor=white)
+![Apache](https://img.shields.io/badge/Apache_2.4-D22128?style=flat-square&logo=apache&logoColor=white)
+![XAMPP](https://img.shields.io/badge/XAMPP-FB7A24?style=flat-square&logo=xampp&logoColor=white)
 
 ---
 
