@@ -1,201 +1,183 @@
-# StudentHub: Enterprise Academic & Campus Event Management Portal
+# StudentHub Portal — Academic Lifecycle & Campus Management System
 
-[![PHP Version](https://img.shields.io/badge/PHP-8.2.12-777BB4?style=for-the-badge&logo=php&logoColor=white)](https://www.php.net/)
-[![Database](https://img.shields.io/badge/MariaDB-10.4.32--InnoDB-003545?style=for-the-badge&logo=mariadb&logoColor=white)](https://mariadb.org/)
-[![Database Schema](https://img.shields.io/badge/Schema-Normalized%20(6%20Tables%20%2B%20SP)-success?style=for-the-badge&logo=mysql&logoColor=white)](sql/studenthub.sql)
-[![Test Suite](https://img.shields.io/badge/Master%20Tests-15%2F15%20Assertions%20Passed%20(100%25)-brightgreen?style=for-the-badge&logo=checkmarx&logoColor=white)](tests/test_all_practicals.php)
-[![Security](https://img.shields.io/badge/Security-RBAC%20%2B%20CSRF%20%2B%20Bcrypt%20%2B%20PDO-critical?style=for-the-badge&logo=auth0&logoColor=white)](includes/auth.php)
-[![Academic Institution](https://img.shields.io/badge/CHARUSAT-DEPSTAR%20ITUE203-00529B?style=for-the-badge)](https://www.charusat.ac.in/)
-
-> **Charotar University of Science and Technology (CHARUSAT)**  
-> **Devang Patel Institute of Advance Technology and Computer Applications (DEPSTAR)**  
-> **Department of Information Technology**  
-> **Course:** Web Development Frameworks (`ITUE203`) • **Semester:** 3rd Semester  
-> **Author:** Dev Patel ([@Dev-Jay99](https://github.com/Dev-Jay99))  
-> **Repository:** [https://github.com/Dev-Jay99/WDF](https://github.com/Dev-Jay99/WDF)
+![PHP Version](https://img.shields.io/badge/PHP-8.2.12-blue?style=flat-square&logo=php)
+![Database](https://img.shields.io/badge/MariaDB-10.4.32%20InnoDB-teal?style=flat-square&logo=mariadb)
+![Architecture](https://img.shields.io/badge/Architecture-3NF%20Relational%20%2B%20REST%20API-indigo?style=flat-square)
+![Tests](https://img.shields.io/badge/Practical%20Tests-15%2F15%20Passed%20(100%25)-success?style=flat-square)
+![Security](https://img.shields.io/badge/Security-Bcrypt%20%7C%20CSRF%20%7C%20RBAC%20%7C%20Timeout-crimson?style=flat-square)
+![Institution](https://img.shields.io/badge/CHARUSAT-DEPSTAR%20IT-navy?style=flat-square)
 
 ---
 
-## 📖 Table of Contents
-1. [Project Overview](#-project-overview)
-2. [System Architecture & Security Highlights](#-system-architecture--security-highlights)
-3. [Complete Practical Curriculum Matrix (Practicals 1 – 15)](#-complete-practical-curriculum-matrix-practicals-1--15)
-4. [Relational Database Schema (studenthub_db)](#-relational-database-schema-studenthub_db)
-5. [Turnkey Local Deployment Guide](#-turnkey-local-deployment-guide)
-6. [Default Verified Seed Credentials](#-default-verified-seed-credentials)
-7. [Master Automated Verification Suite (15/15 Passed)](#-master-automated-verification-suite-1515-passed)
-8. [Deployment & Diagnostics Center](#-deployment--diagnostics-center)
-9. [Project Directory & File Structure](#-project-directory--file-structure)
-10. [Academic Credits & License](#-academic-credits--license)
+### Academic Information
+* **University:** Charotar University of Science and Technology (CHARUSAT)
+* **Institute:** Devang Patel Institute of Advance Technology and Research (DEPSTAR)
+* **Department:** Department of Information Technology
+* **Course:** Web Development Frameworks (`ITUE203`)
+* **Semester:** 3rd Semester, Academic Year 2026–27
+* **Developer:** **Dev Patel** ([@Dev-Jay99](https://github.com/Dev-Jay99))
+* **Project Repository:** [https://github.com/Dev-Jay99/WDF](https://github.com/Dev-Jay99/WDF)
 
 ---
 
-## 🌟 Project Overview
+## 📌 Executive Summary
 
-**StudentHub** is an academic management and campus event portal engineered with **PHP 8.2**, **MariaDB/MySQL 10.4**, **Semantic HTML5**, **Modern CSS3 (Grid & Flexbox)**, and **Vanilla JavaScript (ES6+)**. 
+**StudentHub** is a unified, accessible academic management web portal developed from first principles to address student onboarding, records management, campus event discovery, and administrative oversight. 
 
-Designed to fulfill the entire 15-practical laboratory curriculum of **ITUE203 (Web Development Frameworks)** at CHARUSAT DEPSTAR, the platform delivers secure, asynchronous, role-governed workflows for **Students** and **System Administrators**:
-* **Semantic & Accessible Interface**: WCAG 2.1 AA compliant semantic landmarks, skip links, and light/dark theme persistence.
-* **Dual Persistence Layer**: Concurrency-safe CSV/JSON storage via `flock(LOCK_EX)` alongside a normalized relational MySQL database.
-* **Asynchronous Single Page Operations**: Fetch API with debounced live search (350ms) and standard RESTful HTTP status codes (200, 201, 400, 404, 500).
-* **Enterprise Security**: Bcrypt password hashing (`PASSWORD_BCRYPT`), cryptographic anti-CSRF token validation (`hash_equals`), SQL injection immunity via PDO & MySQLi prepared statements, 15-minute session idle timeout, and cryptographic Remember-Me token authentication (SHA-256).
+Constructed systematically across the 15-week curriculum of **ITUE203**, the platform integrates modern client-side standards (Semantic HTML5, CSS Grid/Flexbox design tokens, accessible DOM components, and asynchronous Fetch API) with a secure, hardened PHP 8.2 & MariaDB backend.
 
 ---
 
-## 🛡️ System Architecture & Security Highlights
+## 🗺️ Visual System Workflow
 
 ```mermaid
-graph TD
-    Client[Web Browser Client] -->|HTTP / HTTPS| VHost[Apache Virtual Host: studenthub.local]
-    VHost --> Router[Front Controller & Role-Based Guard]
-    
-    subgraph Presentation & Client Logic
-        HTML5[Semantic HTML5 & Skip Links]
-        CSS3[Responsive CSS Grid / Flexbox / Tokens]
-        JS[Vanilla JS DOM / Theme Switcher / Debounced Fetch API]
-    end
+sequenceDiagram
+    autonumber
+    actor User as Student / Administrator
+    participant Web as Browser UI (HTML5 + CSS + Vanilla JS)
+    participant Auth as Session & RBAC Guard (auth.php)
+    participant API as RESTful Endpoint (api/events.php)
+    participant DB as MariaDB (studenthub_db)
+    participant Storage as File Storage (CSV / JSON / Posters)
 
-    subgraph Security & Session Management
-        RBAC[Role-Based Access Control: Admin / Student]
-        CSRF[Anti-CSRF Tokens: hash_equals]
-        Bcrypt[Password Hashing: PASSWORD_BCRYPT]
-        Session[PHP Session Guard & 15-min Inactivity Timeout]
+    User->>Web: Navigate to StudentHub Portal
+    Web->>Auth: Verify Session & Remember-Me Token
+    alt Authenticated as Admin
+        Auth-->>Web: Grant access to Admin Dashboard, Student CRUD & Diagnostics
+        User->>Web: Manage Students / Moderation
+        Web->>DB: Execute Prepared PDO / MySQLi Statements
+        DB-->>Web: Return updated records & log to audit_logs
+    else Authenticated as Student
+        Auth-->>Web: Grant access to Student Dashboard & Profile
+        User->>Web: Explore Events via Live Search
+        Web->>API: Asynchronous Fetch Request (GET /api/events.php?search=...)
+        API-->>Web: JSON Response [200 OK] (Zero Full-Page Reload)
+    else Guest User
+        Auth-->>Web: Restrict to Public Pages & Registration Form
+        User->>Web: Submit Registration with Canvas CAPTCHA
+        Web->>DB: Bcrypt Hash & Insert into users + students
+        Web->>Storage: Atomic Concurrency Append (flock EX) to CSV + JSON
     end
-
-    subgraph Persistence Layer
-        MySQL[(MariaDB / MySQL: studenthub_db)]
-        Files[(Atomic Storage: registrations.csv / json)]
-        SP[Stored Procedure: sp_get_dashboard_stats]
-        Audit[Immutable Security Audit Trail: audit_logs]
-    end
-
-    Router --> Presentation & Client Logic
-    Presentation & Client Logic --> Security & Session Management
-    Security & Session Management --> Persistence Layer
-    MySQL --> SP
-    MySQL --> Audit
 ```
 
 ---
 
-## 📋 Complete Practical Curriculum Matrix (Practicals 1 – 15)
+## 📚 Complete Laboratory Practical Syllabus Mapping (1 – 15)
 
-| Practical | Title & Focus Area | Implementation Files | Syllabus Criteria & Features |
-| :--- | :--- | :--- | :--- |
-| **Practical 1** | Requirement Analysis, Sitemap & System Specification | [`docs/Requirement_Gathering.md`](docs/Requirement_Gathering.md) | Functional requirements specification, user personas (Student, Admin), ER diagram, sitemap hierarchy, and REST route specifications. |
-| **Practical 2** | Semantic HTML5 Pages & Accessibility | [`index.html`](index.html), [`pages/about.html`](pages/about.html) | Semantic landmarks (`header`, `nav`, `main`, `section`, `article`, `footer`), `<a class="skip-link">`, breadcrumbs, and WCAG AA accessibility compliance. |
-| **Practical 3** | Responsive UI Design with CSS Grid & Flexbox | [`css/style.css`](css/style.css), [`js/components.js`](js/components.js) | Mobile-first responsive grid layouts across desktop, tablet, and mobile; modular component loader via jQuery layout engine. |
-| **Practical 4** | JavaScript DOM Interactivity & Micro-UI | [`js/script.js`](js/script.js) | Light/Dark theme switcher with `localStorage` persistence, mobile hamburger navigation, dismissible alert banner, auto-playing carousel slider, and accordion FAQs. |
-| **Practical 5** | Client-Side Form Validation & Canvas CAPTCHA | [`pages/register.html`](pages/register.html), [`docs/Validation_Test_Cases.md`](docs/Validation_Test_Cases.md) | 11-field regex validation, dynamic password strength meter, instant blur/input feedback, inline error UX, and custom HTML5 Canvas CAPTCHA generation. |
-| **Practical 6** | External JSON Data Fetching & Array Operations | [`pages/events.html`](pages/events.html), [`data/*.json`](data/) | Asynchronous Fetch API loading (`events.json`, `students.json`, `faqs.json`), live keyword filtering, multi-field sorting, pagination limits, and dependent dropdowns. |
-| **Practical 7** | PHP Server-Side Sanitization & Dual Storage | [`pages/process_register.php`](pages/process_register.php), [`pages/view_records.php`](pages/view_records.php) | Server-side sanitization, cryptographic CSRF tokens, atomic thread-safe file locking with `flock(LOCK_EX)` writing to both CSV and JSON archives. |
-| **Practical 8** | MySQL Schema Design, PDO & Stored Procedures | [`sql/studenthub.sql`](sql/studenthub.sql), [`includes/db.php`](includes/db.php) | 6 normalized tables in 3NF, dual database connector (MySQLi + PHP PDO with native prepared statements), and Stored Procedure `sp_get_dashboard_stats()`. |
-| **Practical 9** | Secure Registration, Duplicate Check & Bcrypt | [`pages/register.php`](pages/register.php), [`pages/process_register.php`](pages/process_register.php) | Prepared database insert into `users` and `students`, duplicate email prevention, `password_hash()` with Bcrypt, and registration audit logging. |
-| **Practical 10** | Session Security, Idle Timeout & Remember-Me | [`includes/auth.php`](includes/auth.php), [`pages/login.php`](pages/login.php) | Secure sessions (`session_regenerate_id`), `password_verify()`, 15-minute idle session timeout, role-based redirection, and SHA-256 persistent Remember-Me tokens. |
-| **Practical 11** | Student Management CRUD with Search & Filter | [`pages/students.php`](pages/students.php) | Complete administrative student module: Add, View, Edit, and Soft Delete (`status = 'deleted'`), multi-field search, course filtering, and CSV export. |
-| **Practical 12** | Event Management CRUD with Poster Upload | [`pages/events_admin.php`](pages/events_admin.php), [`uploads/posters/`](uploads/posters/) | Event management CRUD with secure poster file validation (MIME check, 2 MB limit, unique renaming), category filters, and `.htaccess` script execution prevention. |
-| **Practical 13** | RESTful JSON API & Single-Page AJAX CRUD | [`api/events.php`](api/events.php), [`pages/events_ajax.php`](pages/events_ajax.php) | RESTful API endpoints handling GET, POST, PUT, DELETE with HTTP status codes (200, 201, 400, 404, 500); consumed via Fetch API with 350ms debounced live search. |
-| **Practical 14** | Admin Dashboard, KPI Analytics & Audit Trail | [`pages/admin_dashboard.php`](pages/admin_dashboard.php) | Role-guarded dashboard with live KPI counters, active/inactive user status toggle, HTML5 Canvas monthly registration analytics chart, and live audit trail. |
-| **Practical 15** | System Integration, Diagnostics & Deployment | [`pages/deployment.php`](pages/deployment.php), [`tests/test_all_practicals.php`](tests/test_all_practicals.php) | System Deployment & Diagnostics Center, automated end-to-end test suite (15/15 assertions passed), `.env.example`, and Apache VirtualHost specification (`studenthub.local`). |
+Every practical in the DEPSTAR ITUE203 laboratory syllabus is implemented with its core problem definition, intermediate extension, and advanced extension:
+
+### [Practical 01] Project Planning, Sitemap & System Specification
+* **Objective:** Software requirements engineering and structural sitemap design.
+* **Deliverables:** Detailed functional requirements, user personas (Student, Admin, Guest), relational entity modeling, sitemap diagram, and REST route specifications.
+* **Key Artifacts:** [`docs/Requirement_Gathering.md`](docs/Requirement_Gathering.md), [`images/`](images/) wireframe diagrams.
+
+### [Practical 02] Semantic HTML5 Page Architecture & Web Accessibility
+* **Objective:** WCAG 2.1 AA accessible page structures using native HTML5 landmark elements.
+* **Deliverables:** Structured landmarks (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>`, `<footer>`), `<a class="skip-link">` for keyboard screen-reader navigation, and semantic breadcrumb navigation.
+* **Key Artifacts:** [`index.html`](index.html), [`pages/about.html`](pages/about.html), [`docs/Accessibility_Checklist.md`](docs/Accessibility_Checklist.md).
+
+### [Practical 03] Responsive UI Layouts using CSS Grid & Flexbox
+* **Objective:** Multi-device layout responsiveness without external CSS bloat.
+* **Deliverables:** CSS custom properties (design tokens), 12-column responsive CSS Grid, Flexbox alignment patterns, and modular component loader (`js/components.js`).
+* **Key Artifacts:** [`css/style.css`](css/style.css), [`js/components.js`](js/components.js).
+
+### [Practical 04] Client-Side DOM Manipulation & Micro-Interactions
+* **Objective:** Vanilla JavaScript DOM manipulation and browser state persistence.
+* **Deliverables:** Light/Dark theme toggle persisting in `localStorage`, animated mobile hamburger drawer with backdrop, auto-sliding carousel with hover pause, collapsible FAQ accordion, and modal dialogs.
+* **Key Artifacts:** [`js/script.js`](js/script.js), [`pages/courses.html`](pages/courses.html).
+
+### [Practical 05] Comprehensive Form Validation & HTML5 Canvas CAPTCHA
+* **Objective:** Real-time client-side input validation and bot mitigation.
+* **Deliverables:** 11-field regex validation suite, live password entropy meter, custom HTML5 Canvas CAPTCHA generator with noise and reload capability, and accessible inline error feedback.
+* **Key Artifacts:** [`pages/register.html`](pages/register.html), [`docs/Validation_Test_Cases.md`](docs/Validation_Test_Cases.md).
+
+### [Practical 06] Dynamic Asynchronous Data Consumption via Fetch API
+* **Objective:** Fetching and transforming external JSON datasets in the browser.
+* **Deliverables:** Dynamic consumption of `events.json`, `students.json`, and `faqs.json` (16 records each), debounced keyword search, category filtering, array sorting, client-side pagination, and dependent location dropdowns (Country $\to$ State $\to$ City).
+* **Key Artifacts:** [`pages/events.html`](pages/events.html), [`data/events.json`](data/events.json), [`docs/Practical_6_Test_Report.md`](docs/Practical_6_Test_Report.md).
+
+### [Practical 07] Server-Side Input Sanitization & Dual Storage Engine
+* **Objective:** Secure server-side processing and concurrent file persistence.
+* **Deliverables:** PHP sanitization filters, cryptographic anti-CSRF token verification (`hash_equals`), thread-safe atomic file writing with `flock(LOCK_EX)` writing simultaneously to both CSV and JSON archives, input preservation on validation failure, and an administrative records viewer table.
+* **Key Artifacts:** [`pages/process_register.php`](pages/process_register.php), [`pages/view_records.php`](pages/view_records.php), [`data/registrations.csv`](data/registrations.csv), [`data/registrations.json`](data/registrations.json).
+
+### [Practical 08] Relational Database Modeling, PDO & Stored Procedures
+* **Objective:** Third Normal Form (3NF) relational database design with prepared queries.
+* **Deliverables:** Normalized 6-table schema (`studenthub_db`), dual database driver handler (procedural/OOP MySQLi and PHP PDO), native prepared statements with parameter binding, and Stored Procedure `sp_get_dashboard_stats()`.
+* **Key Artifacts:** [`sql/studenthub.sql`](sql/studenthub.sql), [`includes/db.php`](includes/db.php), [`test_connection.php`](test_connection.php).
+
+### [Practical 09] User Registration with Duplicate Guard & Password Hashing
+* **Objective:** Secure account creation lifecycle and cryptographic credential storage.
+* **Deliverables:** Atomic multi-table insertion into `users` and `students`, unique constraint duplicate check on email/enrollment, irreversible password hashing using `PASSWORD_BCRYPT`, anti-CSRF protection, and automated user registration audit logging.
+* **Key Artifacts:** [`pages/register.php`](pages/register.php), [`pages/process_register.php`](pages/process_register.php).
+
+### [Practical 10] Session Security, Idle Timeout & Cryptographic Remember-Me
+* **Objective:** Stateful authentication, session hardening, and persistent login.
+* **Deliverables:** Session hijacking protection with `session_regenerate_id(true)`, `password_verify()`, 15-minute inactivity session idle timeout, role-based redirection, `last_login` timestamp tracking, and persistent Remember-Me tokens hashed with SHA-256 in the database.
+* **Key Artifacts:** [`includes/auth.php`](includes/auth.php), [`pages/login.php`](pages/login.php), [`pages/logout.php`](pages/logout.php).
+
+### [Practical 11] Administrative Student Management CRUD
+* **Objective:** Complete record lifecycle management with soft deletion.
+* **Deliverables:** Admin portal to Add, View, Edit, and Soft-Delete student records (`status = 'deleted'`), real-time multi-field search, branch/course filtering, and one-click CSV report export.
+* **Key Artifacts:** [`pages/students.php`](pages/students.php).
+
+### [Practical 12] Campus Event Management & Validated File Uploads
+* **Objective:** Multipart form handling, file validation, and directory security.
+* **Deliverables:** Event creation and editing module, file upload validation (strict MIME verification for image/jpeg and image/png, 2 MB size ceiling, unique timestamp renaming), script execution denial in uploads via `.htaccess`, and event activity audit logging.
+* **Key Artifacts:** [`pages/events_admin.php`](pages/events_admin.php), [`uploads/posters/.htaccess`](uploads/posters/.htaccess).
+
+### [Practical 13] RESTful JSON API & Single-Page AJAX Event Management
+* **Objective:** Asynchronous decoupled backend service consumed without page reloads.
+* **Deliverables:** Clean RESTful JSON endpoint (`api/events.php`) supporting `GET`, `POST`, `PUT`, `DELETE` with standard HTTP response codes (`200 OK`, `201 Created`, `400 Bad Request`, `404 Not Found`, `500 Internal Server Error`); consumed via Fetch API in `pages/events_ajax.php` with 350ms debounced live search.
+* **Key Artifacts:** [`api/events.php`](api/events.php), [`pages/events_ajax.php`](pages/events_ajax.php).
+
+### [Practical 14] Role-Based Admin Dashboard, Analytics Chart & Audit Trail
+* **Objective:** Executive administration interface with live metric aggregations.
+* **Deliverables:** Strict RBAC guard (`require_role('admin')`), real-time aggregated KPI counters, user access status toggle (Active / Inactive), pure HTML5 Canvas monthly event registrations bar chart, and an immutable system audit trail table.
+* **Key Artifacts:** [`pages/admin_dashboard.php`](pages/admin_dashboard.php).
+
+### [Practical 15] System Diagnostics Center, Master Test Suite & Deployment
+* **Objective:** End-to-end integration verification, runtime diagnostics, and production packaging.
+* **Deliverables:** System Deployment & Diagnostics Center (`pages/deployment.php`), automated test runner asserting all 15 practicals (`tests/test_all_practicals.php` - 15/15 Passed), `.env.example` environment template, and Apache VirtualHost specification (`docs/apache_vhost.conf`).
+* **Key Artifacts:** [`pages/deployment.php`](pages/deployment.php), [`tests/test_all_practicals.php`](tests/test_all_practicals.php), [`.env.example`](.env.example), [`docs/apache_vhost.conf`](docs/apache_vhost.conf).
 
 ---
 
-## 🗄️ Relational Database Schema (`studenthub_db`)
+## 🗃️ Database Architecture (`studenthub_db`)
 
-The database is fully normalized in Third Normal Form (3NF) and utilizes the `InnoDB` storage engine with `utf8mb4_unicode_ci` collation:
+The relational database is designed in **Third Normal Form (3NF)** with foreign key constraints, index optimization, and the `InnoDB` storage engine:
 
-| Table Name | Engine | Schema Description & Relations |
+| Table | Primary Key | Description & Relations |
 | :--- | :--- | :--- |
-| **`users`** | InnoDB | User authentication credentials, Bcrypt password hashes, account role (`admin`, `student`), and status (`active`, `inactive`). |
-| **`students`** | InnoDB | Academic student profiles, enrollment numbers, course, year, contact details, and soft-delete status. |
-| **`events`** | InnoDB | Campus workshops and hackathons, poster image paths, event dates, venues, categories, and capacities. |
-| **`registrations`** | InnoDB | Transactional student event bookings, foreign-key relationships to `events` and `students`, and timestamps. |
-| **`remember_tokens`** | InnoDB | Cryptographic persistent authentication tokens hashed with SHA-256 with expiry timestamps. |
-| **`audit_logs`** | InnoDB | Immutable administrative and security activity logs, action identifiers, entity IDs, details, and client IP addresses. |
+| **`users`** | `id` (INT) | Core user authentication identities, Bcrypt password hashes, role (`admin`, `student`, `faculty`), and account status (`active`, `inactive`). |
+| **`students`** | `id` (INT) | Normalized student profiles linked to `users.id`, enrollment number (unique), branch course, semester year, contact info, and soft-delete status. |
+| **`events`** | `id` (INT) | Campus workshops, hackathons, and technical symposiums with poster image filenames, venue, event date, category, and status (`open`, `closed`). |
+| **`registrations`** | `id` (INT) | Transactional event reservations connecting `events.id` and `students.id` with seat status and registration timestamp. |
+| **`remember_tokens`** | `id` (INT) | SHA-256 hashed persistent login tokens with explicit expiration dates. |
+| **`audit_logs`** | `id` (INT) | Immutable security audit log tracking user ID, action enum, entity type, target entity ID, description, client IP address, and timestamp. |
 
 ### Stored Procedure: `sp_get_dashboard_stats()`
-Aggregates total active students, events, registrations, and audit activities in a single atomic SQL call:
+Provides atomic KPI aggregations for the admin dashboard:
 ```sql
 CALL sp_get_dashboard_stats();
+-- Returns: total_students, total_events, open_events, total_registrations, active_users, total_audit_events
 ```
 
 ---
 
-## 🚀 Turnkey Local Deployment Guide
+## ⚡ Automated Master Test Suite (15/15 Passed)
 
-### Prerequisites
-* **Web Server**: Apache 2.4+ (included with XAMPP)
-* **PHP**: Version 8.1 or 8.2 with `pdo`, `pdo_mysql`, `mysqli`, `json`, `session`, `mbstring`, `fileinfo`, `exif`
-* **Database**: MySQL 5.7+ or MariaDB 10.4+
+The portal contains an automated verification harness that verifies every syllabus practical module.
 
-### Step-by-Step Installation
-
-1. **Clone the Repository**:
-   Clone directly into your web server's `htdocs` directory:
+### How to Run the Tests:
+1. **Via Web Browser:**
+   Navigate to: `http://localhost/StudentHub/tests/test_all_practicals.php`
+2. **Via Command Line:**
    ```bash
-   cd "D:/DEPSTAR SEM3/WDF/PHP/htdocs"
-   git clone https://github.com/Dev-Jay99/WDF.git StudentHub
+   php tests/test_all_practicals.php
    ```
 
-2. **Start Services in XAMPP**:
-   * Open the **XAMPP Control Panel**.
-   * Start **Apache** and **MySQL**.
-
-3. **Import Database Schema & Seed Data**:
-   * Open **phpMyAdmin** (`http://localhost/phpmyadmin/`).
-   * Create a new database named `studenthub_db`.
-   * Click **Import** $\to$ choose [`sql/studenthub.sql`](sql/studenthub.sql) $\to$ click **Go**.
-   * *(Alternatively via terminal)*:
-     ```bash
-     mysql -u root -p < "D:/DEPSTAR SEM3/WDF/StudentHub/sql/studenthub.sql"
-     ```
-
-4. **Environment Configuration**:
-   * Copy the template to create your `.env`:
-     ```bash
-     cp .env.example .env
-     ```
-   * Default credentials in `includes/db.php` connect out-of-the-box (`127.0.0.1:3306`, user: `root`, password: `""`).
-
-5. **Verify Database Connectivity**:
-   * Visit `http://localhost/StudentHub/test_connection.php` in your browser.
-   * Confirm MySQLi, PDO, and the Stored Procedure all report **PASSED**.
-
-6. **Optional: Virtual Host Setup (`studenthub.local`)**:
-   * Add the following block to your Apache `httpd-vhosts.conf` (see [`docs/apache_vhost.conf`](docs/apache_vhost.conf)):
-     ```apache
-     <VirtualHost *:80>
-         ServerName studenthub.local
-         DocumentRoot "D:/DEPSTAR SEM3/WDF/StudentHub"
-         <Directory "D:/DEPSTAR SEM3/WDF/StudentHub">
-             Options Indexes FollowSymLinks
-             AllowOverride All
-             Require all granted
-         </Directory>
-     </VirtualHost>
-     ```
-   * Add `127.0.0.1 studenthub.local` to `C:\Windows\System32\drivers\etc\hosts`.
-
----
-
-## 🔑 Default Verified Seed Credentials
-
-| Role | Email Address | Password | Privileges / Scope |
-| :--- | :--- | :--- | :--- |
-| **System Administrator** | `admin@charusat.edu.in` | `Admin@123` | Full access to Admin Dashboard, Student CRUD, Event CRUD, Deployment Diagnostics, and Audit Trail. |
-| **Verified Student** | `student@charusat.edu.in` | `Student@123` | Student Dashboard, profile management, campus event exploration, and registration. |
-
----
-
-## ⚡ Master Automated Verification Suite (15/15 Passed)
-
-StudentHub features an automated test runner asserting integration correctness across all 15 practicals:
-* **Web GUI**: Navigate to `http://localhost/StudentHub/tests/test_all_practicals.php`
-* **CLI Execution**:
-  ```bash
-  php tests/test_all_practicals.php
-  ```
-
+### Test Verification Summary:
 ```text
 ================================================================================
 StudentHub Portal - Master Automated Test Runner (Practical 15)
@@ -222,19 +204,54 @@ Total Assertions: 15 | Passed: 15 | Failed: 0 (100% Success Rate)
 
 ---
 
-## 🖥️ Deployment & Diagnostics Center
+## 🛠️ Local Setup & Deployment Guide
 
-The administrative diagnostics dashboard is accessible at:
-> **`http://localhost/StudentHub/pages/deployment.php`**
+### Prerequisites
+* **Web Server:** Apache 2.4+ (via XAMPP)
+* **PHP:** PHP 8.1 or 8.2 (Required extensions: `pdo`, `pdo_mysql`, `mysqli`, `json`, `session`, `mbstring`, `fileinfo`, `exif`, `curl`)
+* **Database:** MariaDB 10.4+ or MySQL 8.0+
 
-* **Server & PHP Telemetry**: Real-time inspection of OS (`Windows 11 Pro/Home x86_64`), Apache 2.4 server software, PHP 8.2 version, memory limits (`512M`), and max file upload limits (`40M`).
-* **PHP Extension Audit**: Automated audit verifying 10 required extensions (`pdo`, `pdo_mysql`, `mysqli`, `json`, `session`, `openssl`, `mbstring`, `fileinfo`, `curl`, `exif`).
-* **Database Telemetry**: Live row counters, storage engine confirmation, and `sp_get_dashboard_stats()` execution metrics.
-* **Persistent Storage Telemetry**: Concurrency, existence, and writability verification of `uploads/posters/`, `data/registrations.csv`, and `data/registrations.json`.
+### Step-by-Step Installation
+
+1. **Clone the Repository into XAMPP `htdocs`**:
+   ```bash
+   cd "D:/DEPSTAR SEM3/WDF/PHP/htdocs"
+   git clone https://github.com/Dev-Jay99/WDF.git StudentHub
+   ```
+
+2. **Start Apache & MySQL**:
+   * Open the **XAMPP Control Panel**.
+   * Start both **Apache** and **MySQL** modules.
+
+3. **Import Database Schema & Sample Records**:
+   * Open phpMyAdmin: `http://localhost/phpmyadmin/`
+   * Create a database named `studenthub_db`.
+   * Go to **Import** $\to$ Choose [`sql/studenthub.sql`](sql/studenthub.sql) $\to$ Click **Go**.
+
+4. **Initialize Environment Variables**:
+   ```bash
+   copy .env.example .env
+   ```
+   *Default database settings in `includes/db.php` connect directly out-of-the-box (`127.0.0.1:3306`, user `root`, password empty).*
+
+5. **Access the Application**:
+   * **Home Portal:** `http://localhost/StudentHub/`
+   * **Database Diagnostics:** `http://localhost/StudentHub/test_connection.php`
+   * **System Deployment Center:** `http://localhost/StudentHub/pages/deployment.php`
+   * **Master Test Suite:** `http://localhost/StudentHub/tests/test_all_practicals.php`
 
 ---
 
-## 📁 Project Directory & File Structure
+## 🔑 Default Evaluation Accounts
+
+| Role | Email Address | Password | Capabilities |
+| :--- | :--- | :--- | :--- |
+| **Administrator** | `admin@charusat.edu.in` | `Admin@123` | Full administrative control, student CRUD, event CRUD, status moderation, system diagnostics, and audit trail. |
+| **Student** | `student@charusat.edu.in` | `Student@123` | Student dashboard, profile editor, event exploration, and live registration. |
+
+---
+
+## 📂 Project Directory Structure
 
 ```text
 StudentHub/
@@ -313,10 +330,8 @@ StudentHub/
 
 ---
 
-## 🎓 Academic Credits & License
+## 📜 Academic Integrity & License
 
-* **Institution:** Charotar University of Science and Technology (CHARUSAT)
-* **Faculty:** Devang Patel Institute of Advance Technology and Research (DEPSTAR)
-* **Course:** ITUE203 - Web Development Frameworks
-* **Author:** Dev Patel ([@Dev-Jay99](https://github.com/Dev-Jay99))
-* **License:** Released under the [MIT License](LICENSE) for academic education and development.
+This project is authored by **Dev Patel** for the **ITUE203 (Web Development Frameworks)** course under the curriculum of **Devang Patel Institute of Advance Technology and Research (DEPSTAR)**, **Charotar University of Science and Technology (CHARUSAT)**.
+
+Distributed under the [MIT License](LICENSE) for educational, research, and non-commercial development.
