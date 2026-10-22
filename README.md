@@ -62,6 +62,23 @@ sequenceDiagram
 
 ---
 
+## 🛠️ Complete Project Technology Stack
+
+This application is engineered strictly using the following cohesive, production-grade technology stack:
+
+| Tier / Layer | Technology | Version / Specification | Exact Role in StudentHub |
+| :--- | :--- | :--- | :--- |
+| **Relational Database** | **MariaDB** | **10.4.32-MariaDB (InnoDB Engine)** | Normalized Third Normal Form (3NF) relational database, foreign key constraints, `utf8mb4_unicode_ci` character encoding, and Stored Procedure (`sp_get_dashboard_stats`). |
+| **Backend Language** | **PHP** | **PHP 8.2.12 (`apache2handler`)** | Core application logic, RESTful API endpoints, server-side validation, anti-CSRF token verification (`hash_equals`), and Bcrypt password hashing (`PASSWORD_BCRYPT`). |
+| **Database Abstraction** | **PHP PDO & MySQLi** | **Native Prepared Statements** | Parameterized query execution protecting against SQL injection attacks across all database interactions. |
+| **Web Server** | **Apache HTTP Server** | **Apache 2.4.58 (Win64)** | Local HTTP/HTTPS server hosting, Virtual Host (`studenthub.local`), and `.htaccess` upload execution security. |
+| **Frontend Markup** | **HTML5** | **Semantic HTML5** | Semantic landmark tags (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<footer>`), `<a class="skip-link">`, Canvas CAPTCHA, and Canvas analytics charts. |
+| **Styling & Layout** | **Vanilla CSS3** | **CSS Grid & Flexbox** | Custom CSS properties (Design Tokens), responsive 12-column Grid, Flexbox, Light & Dark theme tokens, and zero heavy CSS dependencies. |
+| **Client-Side Scripting** | **JavaScript (ES6+)** | **Vanilla JS (Fetch API)** | Asynchronous RESTful JSON API consumption (`api/events.php`), 350ms debounced live search, `localStorage` theme persistence, and DOM manipulation. |
+| **File Storage** | **PHP Atomic File I/O** | **`flock(LOCK_EX)`** | Thread-safe, concurrency-guarded append-only storage for `registrations.csv`, `registrations.json`, `contacts.csv`, and `contacts.json`. |
+
+---
+
 ## 📚 Complete Laboratory Practical Syllabus Mapping (1 – 15)
 
 Every practical in the DEPSTAR ITUE203 laboratory syllabus is implemented with its core problem definition, intermediate extension, and advanced extension:
@@ -207,9 +224,9 @@ Total Assertions: 15 | Passed: 15 | Failed: 0 (100% Success Rate)
 ## 🛠️ Local Setup & Deployment Guide
 
 ### Prerequisites
-* **Web Server:** Apache 2.4+ (via XAMPP)
-* **PHP:** PHP 8.1 or 8.2 (Required extensions: `pdo`, `pdo_mysql`, `mysqli`, `json`, `session`, `mbstring`, `fileinfo`, `exif`, `curl`)
-* **Database:** MariaDB 10.4+ or MySQL 8.0+
+* **Web Server:** Apache 2.4.58 (packaged via XAMPP)
+* **Backend Runtime:** PHP 8.2.12 (with extensions: `pdo`, `pdo_mysql`, `mysqli`, `json`, `session`, `mbstring`, `fileinfo`, `exif`, `curl`)
+* **Relational Database:** MariaDB 10.4.32 (packaged via XAMPP)
 
 ### Step-by-Step Installation
 
@@ -219,9 +236,9 @@ Total Assertions: 15 | Passed: 15 | Failed: 0 (100% Success Rate)
    git clone https://github.com/Dev-Jay99/WDF.git StudentHub
    ```
 
-2. **Start Apache & MySQL**:
+2. **Start Apache & MariaDB in XAMPP**:
    * Open the **XAMPP Control Panel**.
-   * Start both **Apache** and **MySQL** modules.
+   * Start both the **Apache** and **MySQL / MariaDB** services.
 
 3. **Import Database Schema & Sample Records**:
    * Open phpMyAdmin: `http://localhost/phpmyadmin/`
